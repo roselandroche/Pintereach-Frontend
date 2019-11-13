@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
 import { getToken } from './utils/api';
-import ProtectedRoute from './components/PrivateRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import ArticleList from './components/ArticleList';
+import Articles from './components/Articles';
+import UpdateArticle from './components/UpdateArticle';
 
 
 import './App.css';
