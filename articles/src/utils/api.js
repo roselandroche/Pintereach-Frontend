@@ -6,10 +6,10 @@ export function getToken() {
 
 export default function () {
     return axios.create({
-        // need base URL for axios (localhost:5000) example
-        baseURL: "",
+        // need base URL for axios
+        baseURL: "https://lambda-bw-pintereach.herokuapp.com/",
         headers: {
-            Authorization: getToken(),
+            Authorization: localStorage.getItem('token'),
         }
     })
 }
