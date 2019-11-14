@@ -19,9 +19,10 @@ function Login(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        api().post("/api/login", status)
+        api()
+            .post("/api/auth/login", status)
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 localStorage.setItem('token', res.data.payload)
                 props.history.push('/account')
             })
@@ -43,4 +44,4 @@ function Login(props) {
 
 export default Login
 
-// This gives the user an athentication token once signed in.
+// This gives the user an authentication token once signed in.
