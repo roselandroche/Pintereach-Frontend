@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import api from '../utils/api';
+import React from 'react'
 
-
-function UpdateArticle(props) {
-    const [updateArticle, setUpdatedArticle] = useState({
+function AddArticle(props) {
+    const [newArticle, setNewArticle] = useState({
         title: '',
         summary: ''
     })
 
     const handleChange = event => {
-        setUpdatedArticle({
-            ...updateArticle,
+        setNewArticle({
+            ...newArticle,
             [event.target.name]: event.target.value
         }) 
     }
@@ -18,7 +16,7 @@ function UpdateArticle(props) {
     const handleSubmit = event => {
         event.preventDefault()
         api()
-            .put('api/articles/:id', updateArticle)
+            .post('api/articles/', newArticle)
             .then(res => {
                 console.log(res.data)
                 props.history.push(`/dashboard`)
@@ -33,20 +31,19 @@ function UpdateArticle(props) {
                     type='text'
                     name='title'
                     placeholder='Title'
-                    value={updateArticle.title}
+                    value={newArticle.title}
                     onChange={handleChange}
                 />
                 <input 
                     type='text'
                     name='summary'
                     placeholder='Summary'
-                    value={updateArticle.summary}
+                    value={newArticle.summary}
                     onChange={handleChange}
                 />
-                <button type='submit'>Update</button>
+                <button type='submit'>Add Article</button>
             </form>
         </div>
     )
 }
-
-export default UpdateArticle
+export default AddArticle;
