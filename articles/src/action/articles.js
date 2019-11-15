@@ -6,8 +6,8 @@ export const ARTICLE_SUCCESS = "ARTICLE_SUCCESS"
 export const ARTICLE_ERROR = "ARTICLE_ERROR";
 
 export const addArticle = () => {
-    dispatchEvent({ type: ADD_TITLE});
-    api().get(``)
+    dispatchEvent({ type: ADD_TITLE, payload: title });
+    api().get(`https://pintreachbackend.herokuapp.com/api/articles/${title}`)
     .then(res => {
         console.log(res.data)
         dispatchEvent({ type: ARTICLE_SUCCESS, payload: res.data });

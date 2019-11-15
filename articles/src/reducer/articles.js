@@ -8,7 +8,7 @@ import {
 
 
 const initialState = {
-    title: [],
+    title: "",
     isLoading: false,
     error: null
 };
@@ -23,14 +23,14 @@ export function reducer(state = initialState, action) {
             case ARTICLE_SUCCESS:
                 return {
                     ...state, 
-                    articles: action.payload,
+                    title: action.payload,
                     isLoading: false
                 };
                 case ARTICLE_ERROR:
                     return {
                         ...state,
                         error: action.payload,
-                        isLoading: true
+                        isLoading: false
                     }
         case REMOVE_TITLE:
             return {
