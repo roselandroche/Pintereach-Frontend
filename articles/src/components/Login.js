@@ -19,11 +19,12 @@ function Login(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        api().post("/api/login", status)
+        api()
+            .post("/api/auth/login", status)
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 localStorage.setItem('token', res.data.payload)
-                props.history.push('/account')
+                props.history.push('/dashboard')
             })
             .catch(err => {
                 setError(err.res)
@@ -31,6 +32,8 @@ function Login(props) {
     }
 
     return (
+        <>
+            <h1>Welcome to Pintereach!</h1>
         <form onSubmit={handleSubmit}>
             {error && <div className='error'>{error}</div>}
             <input type='text' name='username' placeholder="Username" value={status.username} onChange={handleChange} />
@@ -38,9 +41,10 @@ function Login(props) {
 
             <button type='submit'>Login</button>
         </form>
+        </>
     )
 }
 
 export default Login
 
-// This gives the user an athentication token once signed in.
+// This gives the user an authentication token once signed in.

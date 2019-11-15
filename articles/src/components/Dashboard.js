@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from './DashboardNav'
-import PinnedArticles from './PinnedArticles'
+import api from '../utils/api';
 
 function Dashboard() {
     return (
-        <div>
+      <div>
         <Navbar />
         <PinnedArticles/>
-        </div>
+       </div>
     )
 }
-
 export default Dashboard
