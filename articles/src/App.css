@@ -21,6 +21,8 @@
   color: #09d3ac;
 }
 
+
+
 .navbar {
   height: 50px;
   background: #5193b3;
@@ -87,3 +89,34 @@
 }
 
 
+.register {
+  max-width: 90%;
+  width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.styled-input{
+  width: 80%;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: solid 2px #cdcdcd;
+  background: white;
+  display: block;
+  
+  
+}
+.primary-button{
+  display: block;
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  background: #5193b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
