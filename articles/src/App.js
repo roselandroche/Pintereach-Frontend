@@ -22,12 +22,13 @@ function App() {
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/articlelist'>Article List</Link>
+          <Link to='/dashboard'>Article List</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
 
           <Route exact path='/login' component={Login} />
+          <Route exact path='/dashboard' component={Dashboard} />
         <ProtectedRoute exact path='/articlelist' component={Dashboard} />
         <ProtectedRoute exact path='/articles' component={Articles} />
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />

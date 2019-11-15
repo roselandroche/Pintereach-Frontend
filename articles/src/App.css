@@ -20,3 +20,70 @@
 .App-link {
   color: #09d3ac;
 }
+
+.navbar {
+  height: 50px;
+  background: #5193b3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.navbar .logo {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar .add-button{
+  color: white;
+  text-decoration: none;
+  background: #64c4c3;
+  height: 25px;
+  width: 50px;
+  font-weight: bold;
+  padding-top: 5px ;
+}
+
+.pinned-articles{
+  background: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pinned-articles .title{
+  text-align: left;
+  font-weight: bold;
+  color: #363636;
+  display: block;
+}
+
+.pinned-articles .card{
+  width: 200px;
+  text-align: left;
+}
+.pinned-articles .card{
+  width: 200px;
+  text-align: left;
+}
+.pinned-articles .card .card-content .title{
+  width: 100px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.pinned-articles .card .card-content .category{
+  background: #cdcdcd;
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.pinned-articles .card-image img{
+  width: 100px;
+  height: 150px;
+}
+
+
