@@ -1,7 +1,8 @@
 import React from "react";
 import { withFormik, Form, Field } from "formik";
+import * as Yup from 'yup';
 
-const Register = ({ values, handleChange }) => {
+const Register = ({ values, handleChange, touched, errors }) => {
   return (
     <div className="register">
       <div className="illustration">
@@ -15,13 +16,15 @@ const Register = ({ values, handleChange }) => {
           type="text"
           onChange={handleChange}
         />
+        {touched.email && errors.email && ( <p className="error">{errors.email}</p>)}
         <Field
           name="password"
           value={values.password}
           placeholder="password"
           type="password"
           onChange={handleChange}
-        />
+          />
+          {touched.password && errors.password && ( <p className="error">{errors.password}</p>)}
         <button type="submit">Sign up</button>
       </Form>
     </div>
@@ -33,12 +36,19 @@ const FormikRegister = withFormik({
     return {
       email: email || "",
       password: password || ""
-    };
+    }
   },
-
+  
   handleSubmit(values) {
     console.log(values);
-  }
+  },
+
+  validationSchema: Yup.object().shape({
+    email: Yup.string().required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  }),
+
+
 })(Register);
 
 export default FormikRegister;
