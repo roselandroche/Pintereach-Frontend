@@ -1,30 +1,44 @@
 import React from "react";
-import { withFormik, Form } from "formik";
+import { withFormik, Form, Field } from "formik";
 
-
-const Register = () => {
+const Register = ({ values, handleChange }) => {
   return (
     <div className="register">
       <div className="illustration">
         <img width="300px" src="img/register-illustration.svg" alt="" />
       </div>
-      <form>
-          <input placeholder="email" type="text"/>
-          <input placeholder="password" type="password"/>
-          <button>Sign up</button>
-      </form>
+      <Form>
+        <Field
+          name="email"
+          value={values.email}
+          placeholder="email"
+          type="text"
+          onChange={handleChange}
+        />
+        <Field
+          name="password"
+          value={values.password}
+          placeholder="password"
+          type="password"
+          onChange={handleChange}
+        />
+        <button type="submit">Sign up</button>
+      </Form>
     </div>
   );
 };
 
 const FormikRegister = withFormik({
-    mapPropsValues({email, password}){
-        return {
-            email: email || '',
-            password: password || ''
-        }
-    }
+  mapPropsValues({ email, password }) {
+    return {
+      email: email || "",
+      password: password || ""
+    };
+  },
 
-})(Register)
+  handleSubmit(values) {
+    console.log(values);
+  }
+})(Register);
 
-export default FormikRegister
+export default FormikRegister;
