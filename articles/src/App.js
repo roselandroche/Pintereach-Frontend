@@ -22,7 +22,7 @@ function App() {
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/dashboard'>Article List</Link>
+          <Link to='/dashboard'>Dashboard</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
