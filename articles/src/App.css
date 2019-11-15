@@ -87,3 +87,9 @@
 }
 
 
+.register {
+  max-width: 90%;
+  width: 400px;
+  background: lightblue;
+  margin: 0 auto;
+}

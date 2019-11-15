@@ -7,6 +7,7 @@ import Logout from './components/Logout';
 import Dashboard from './components/Dashboard';
 import Articles from './components/Articles';
 import UpdateArticle from './components/UpdateArticle';
+import Register from './components/Register'
 
 
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
 
+          <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/dashboard' component={Dashboard} />
         <ProtectedRoute exact path='/articlelist' component={Dashboard} />

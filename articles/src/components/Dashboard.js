@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './DashboardNav'
 import PinnedArticles from './PinnedArticles'
 
-function ArticleList() {
+function Dashboard() {
     return (
         <div>
         <Navbar />
@@ -11,4 +11,4 @@ function ArticleList() {
     )
 }
 
-export default ArticleList
+export default Dashboard
