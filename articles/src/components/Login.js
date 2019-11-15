@@ -24,7 +24,7 @@ function Login(props) {
             .then(res => {
                 console.log(res.data)
                 localStorage.setItem('token', res.data.payload)
-                props.history.push('/account')
+                props.history.push('/dashboard')
             })
             .catch(err => {
                 setError(err.res)
