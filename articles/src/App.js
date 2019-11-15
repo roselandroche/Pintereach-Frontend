@@ -4,7 +4,7 @@ import { getToken } from './utils/api';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import ArticleList from './components/ArticleList';
+import Dashboard from './components/Dashboard';
 import Articles from './components/Articles';
 import UpdateArticle from './components/UpdateArticle';
 
@@ -22,13 +22,13 @@ function App() {
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/articlelist'>Article List</Link>
+          <Link to='/dashboard'>Article List</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
 
           <Route exact path='/login' component={Login} />
-        <ProtectedRoute exact path='/articlelist' component={ArticleList} />
+        <ProtectedRoute exact path='/dashboard' component={Dashboard} />
         <ProtectedRoute exact path='/articles' component={Articles} />
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
