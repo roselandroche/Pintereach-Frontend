@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import api from '../utils/api';
 
 
-function ArticleList() {
+function Dashboard() {
     return (
         <div>
             
@@ -10,4 +10,4 @@ function ArticleList() {
     )
 }
 
-export default ArticleList
+export default Dashboard
