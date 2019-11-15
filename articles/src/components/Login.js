@@ -32,6 +32,7 @@ function Login(props) {
     }
 
     return (
+        <>
             <h1>Welcome to Pintereach!</h1>
         <form onSubmit={handleSubmit}>
             {error && <div className='error'>{error}</div>}
@@ -40,6 +41,7 @@ function Login(props) {
 
             <button type='submit'>Login</button>
         </form>
+        </>
     )
 }
 

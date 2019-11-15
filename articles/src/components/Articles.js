@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
+import { addArticle } from '../action/articles';
 
 import api from '../utils/api';
 
@@ -16,9 +17,9 @@ function Articles(props) {
             
         </div>
 
-         {props.isTitleLoading ? (
-            <div className='spinner' />
-        )}
+        //  {props.isTitleLoading ? (
+        //     <div className='spinner' />
+        // )}
     )
 }
 
