@@ -9,11 +9,12 @@ import data from './dummyData'
 function Dashboard() {
 
     const [articles, setArticles] = useState(data)
-    const [board1, setBoard1] = useState([])
-    const [board2, setBoard2] = useState([])
-    const [board3, setBoard3] = useState([])
-    const [board4, setBoard4] = useState([])
+    const [filteredArticles, updateArticles] = useState(data)
+   
 
+    const search = data =>{
+        updateArticles(data)
+    }
 
   
     
@@ -33,7 +34,7 @@ function Dashboard() {
         {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
         
         <Navbar />
-        <ArticleGroup name="Resources" articles={articles}/>
+        <ArticleGroup search={search} name="Resources" articles={filteredArticles}/>
     
        </div>
     )
