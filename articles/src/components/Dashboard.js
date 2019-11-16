@@ -17,9 +17,9 @@ function Dashboard() {
     setArticles(data);
     updateArticles(data);
 
-    // api().get('/api/articles').then(res=>{
-    //     console.log(res)0
-    // })
+    api().get('/api/articles').then(res=>{
+        console.log(res)
+    })
   }, []);
 
   return (
