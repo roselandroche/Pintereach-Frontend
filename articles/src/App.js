@@ -7,6 +7,7 @@ import Logout from './components/Logout';
 import Dashboard from './components/Dashboard';
 import Articles from './components/Articles';
 import UpdateArticle from './components/UpdateArticle';
+import Register from './components/Register'
 
 
 import './App.css';
@@ -18,23 +19,24 @@ function App() {
     <div className="wrapper">
       <div className="App">
         <nav>
-          <Link to='/'>Home</Link>
+          {/* <Link to='/'>Home</Link> */}
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/articlelist'>Article List</Link>
+          <Link to='/dashboard'>Dashboard</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
 
+          <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
-        <ProtectedRoute exact path='/articlelist' component={Dashboard} />
+        <ProtectedRoute exact path='/dashboard' component={Dashboard} />
         <ProtectedRoute exact path='/articles' component={Articles} />
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
         <Articles />
-    </div>
       </div>
+    </div>
   );
 }
 

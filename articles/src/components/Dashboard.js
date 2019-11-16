@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 import api from '../utils/api';
 
 
-function ArticleList() {
+function Dashboard() {
     return (
-        <div>
-            
-        </div>
+      <div>
+        {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
+        
+        {/* <Navbar />
+        <PinnedArticles/> */}
+       </div>
     )
 }
 
-export default ArticleList
 
 
 {/* <Form>
@@ -37,3 +39,5 @@ export default withFormik({
            }
         },
 } */}
+
+export default Dashboard
