@@ -50,8 +50,14 @@
 .pinned-articles{
   background: #f1f1f1;
   padding: 10px;
+}
+
+.pinned-articles .articles{
   display: flex;
   justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: scroll;
+
 }
 
 .pinned-articles .title{
@@ -64,11 +70,9 @@
 .pinned-articles .card{
   width: 200px;
   text-align: left;
+  margin-right: 10px;
 }
-.pinned-articles .card{
-  width: 200px;
-  text-align: left;
-}
+
 .pinned-articles .card .card-content .title{
   width: 100px;
   text-overflow: ellipsis;
@@ -86,6 +90,7 @@
 .pinned-articles .card-image img{
   width: 100px;
   height: 150px;
+  border-radius: 5px;
 }
 
 
