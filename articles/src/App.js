@@ -19,7 +19,7 @@ function App() {
     <div className="wrapper">
       <div className="App">
         <nav>
-          <Link to='/'>Home</Link>
+          {/* <Link to='/'>Home</Link> */}
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
@@ -35,8 +35,8 @@ function App() {
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
         <Articles />
-    </div>
       </div>
+    </div>
   );
 }
 
