@@ -1,48 +1,44 @@
-import React, { useState, useEffect } from 'react'
-import ArticleGroup from './ArticleGroup'
-import Navbar from './DashboardNav'
-import axios from 'axios'
-import api from '../utils/api';
-import data from './dummyData'
-
+import React, { useState, useEffect } from "react";
+import ArticleGroup from "./ArticleGroup";
+import Navbar from "./DashboardNav";
+import axios from "axios";
+import api from "../utils/api";
+import data from "./dummyData";
 
 function Dashboard() {
+  const [articles, setArticles] = useState([]);
+  const [filteredArticles, updateArticles] = useState([]);
 
-    const [articles, setArticles] = useState(data)
-    const [filteredArticles, updateArticles] = useState(data)
-   
+  const search = array => {
+    updateArticles(array);
+  };
 
-    const search = data =>{
-        updateArticles(data)
-    }
+  useEffect(() => {
+    setArticles(data);
+    updateArticles(data);
 
-  
-    
-    useEffect(()=>{
-    
-    
+    // api().get('/api/articles').then(res=>{
+    //     console.log(res)0
+    // })
+  }, []);
 
-        // api().get('/api/articles').then(res=>{
-        //     console.log(res)0
-        // })
+  return (
+    <div>
+      {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
 
-        
-    }, [])
-
-    return (
-      <div>
-        {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
-        
-        <Navbar />
-        <ArticleGroup search={search} name="Resources" articles={filteredArticles}/>
-    
-       </div>
-    )
+      <Navbar />
+      <ArticleGroup
+        search={search}
+        name="Resources"
+        articles={articles}
+        articleFilter={filteredArticles}
+      />
+    </div>
+  );
 }
 
-
-
-{/* <Form>
+{
+  /* <Form>
 
 { touched.category && errors.category && <p className='error'>{errors.category}</p> }
 <Field component="select" name="category">
@@ -65,6 +61,7 @@ export default withFormik({
                category: values.category || ''
            }
         },
-} */}
+} */
+}
 
-export default Dashboard
+export default Dashboard;
