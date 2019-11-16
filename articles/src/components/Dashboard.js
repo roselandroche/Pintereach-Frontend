@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import Navbar from './DashboardNav';
+import PinnedArticles from './PinnedArticles';
 import api from '../utils/api';
 
 
@@ -7,8 +9,8 @@ function Dashboard() {
       <div>
         {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
         
-        {/* <Navbar />
-        <PinnedArticles/> */}
+        <Navbar />
+        <PinnedArticles/>
        </div>
     )
 }
