@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SearchForm({ search, articles, articleFilter }) {
+export default function SearchForm({ search, articles }) {
   
   const [results, setResults] = useState("");
 
@@ -12,11 +12,8 @@ export default function SearchForm({ search, articles, articleFilter }) {
     e.preventDefault();
     if (results) {
       let filtered = articles.filter(el => {
-        if (el.title.toLowerCase().indexOf(results.toLowerCase()) !== -1) {
+        if (el.title.toLowerCase().indexOf(results.toLowerCase()) !== -1) 
           return el;
-        } else {
-          console.error("que dijiste de mi mama pendejo?");
-        }
       });
 
       if (filtered.length == 0) {
