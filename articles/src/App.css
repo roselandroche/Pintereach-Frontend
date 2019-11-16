@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  
 }
 
 .navbar .logo {
@@ -47,39 +48,31 @@
   padding-top: 5px ;
 }
 
-.pinned-articles{
+.article-group{
   background: #f1f1f1;
   padding: 10px;
+  height: 100vh;
+
 }
 
-.pinned-articles .articles{
+.article-group .articles{
   display: flex;
-  justify-content: flex-start;
-  overflow: hidden;
-  overflow-x: scroll;
-
+  flex-wrap: wrap;
+  margin-bottom: 20px;  
 }
 
-.pinned-articles .title{
+.article-group .card{
   text-align: left;
-  font-weight: bold;
-  color: #363636;
-  display: block;
+  margin: 10px 0px 10px 10px;
 }
 
-.pinned-articles .card{
-  width: 200px;
-  text-align: left;
-  margin-right: 10px;
-}
-
-.pinned-articles .card .card-content .title{
+.article-group .card .card-content .title{
   width: 100px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.pinned-articles .card .card-content .category{
+.article-group .card .card-content .category{
   background: #cdcdcd;
   display: inline-block;
   padding: 2px 5px;
@@ -89,20 +82,27 @@
 
 
 
-.pinned-articles .card-image{
+.article-group .card-image{
   position: relative;
   overflow: hidden;
   height: 150px;
   width: 100px;
   border-radius: 5px;
 }
-.pinned-articles .card-image img{
+.article-group .card-image img{
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
 }
 
+
+.article-group .title{
+  text-align: left;
+  font-weight: bold;
+  color: #363636;
+  display: block;
+}
 
 .register {
   max-width: 90%;
