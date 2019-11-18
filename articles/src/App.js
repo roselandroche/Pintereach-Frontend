@@ -33,7 +33,6 @@ function App() {
         <ProtectedRoute exact path="/articles" component={Articles} />
         <ProtectedRoute exact path="/updatearticle" component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
-        {/* <Articles /> */}
       </div>
     </div>
   );

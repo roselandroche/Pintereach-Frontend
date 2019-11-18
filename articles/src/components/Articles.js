@@ -16,6 +16,7 @@ function Articles(props) {
       <div className="article-container">
         <div className="article-image">{/* <img src={articleImage} /> */}</div>
         <div className="article-information">
+          <h1> Testing!!!</h1>
           <h3>Permanent Record</h3>
           <p>Permanent Recordby Edward Snowden</p>
           <button>Book</button>
