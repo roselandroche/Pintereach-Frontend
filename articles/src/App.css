@@ -129,12 +129,19 @@
 .article-container {
   display: flex;
   padding: 150px;
+  align-items: flex-start;
 }
 
 .article-information {
-  padding-left: 100px;
+  padding-left: 10px;
 }
 
 .article-buttons {
   display: flex;
+}
+
+.divider {
+  width: 5px;
+  height: auto;
+  display: inline-block;
 }

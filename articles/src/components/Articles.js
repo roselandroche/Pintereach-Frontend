@@ -48,6 +48,7 @@ function Articles(props) {
           <p>{data[0].summary} </p>
           <div className="article-buttons">
             <button className="primary-button">Read</button>
+            <div className="divider" />
             <button className="primary-button">Add to Pinned</button>
           </div>
         </div>
