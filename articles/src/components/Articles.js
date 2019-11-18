@@ -48,9 +48,9 @@ function Articles(props) {
           <p className="summary">{data[0].summary} </p>
 
           <div className="article-buttons">
-            <button className="primary-button">Read</button>
+            <button className="article-button">Read</button>
             <div className="divider" />
-            <button className="primary-button">Add to Pinned</button>
+            <button className="article-button">Add to Pinned</button>
           </div>
         </div>
       </div>
