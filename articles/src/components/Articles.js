@@ -7,19 +7,15 @@ import api from '../utils/api';
 
 function Articles(props) {
 
-    useEffect(() => {
-        props.addArticle();
-    }, []);
+    // useEffect(() => {
+    //     props.addArticle();
+    // }, []);
 
 
     return (
         <div>
             
         </div>
-
-        //  {props.isTitleLoading ? (
-        //     <div className='spinner' />
-        // )}
     )
 }
 
