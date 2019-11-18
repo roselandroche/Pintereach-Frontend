@@ -134,6 +134,13 @@
 
 .article-information {
   padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.summary {
+  text-align: left
 }
 
 .article-buttons {
