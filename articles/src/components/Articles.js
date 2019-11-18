@@ -44,7 +44,7 @@ function Articles(props) {
         <div className="article-information">
           <h3>{data[0].title}</h3>
           <p>By Edward Snowden</p>
-          <button>Book</button>
+          <button className="book-button">Book</button>
           <p className="summary">{data[0].summary} </p>
 
           <div className="article-buttons">
