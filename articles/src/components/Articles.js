@@ -1,36 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { addArticle } from '../action/articles';
+import { addArticle } from "../action/articles";
+import Navbar from "./DashboardNav";
+import api from "../utils/api";
 
-import api from '../utils/api';
-
+const data = [
+  {
+    id: 1,
+    title: "Permanent Record",
+    summary:
+      "Pokémon, electronic game series from Nintendo that debuted in Japan in 1995 and later became wildly popular in the United States. The series, originally produced for the company's Game Boy line of handheld consoles, was introduced in 1998 to the United States with two titles, known to fans as Red and Blue.",
+    link: "https://www.britannica.com/topic/Pokemon-electronic-game",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/51z1ZaEn6sL._SX327_BO1,204,203,200_.jpg",
+    user_id: 1,
+    category: "Article"
+  },
+  {
+    id: 2,
+    title: "The Design Hustle",
+    summary:
+      "Dota 2 is a multiplayer online battle arena video game developed and published by Valve Corporation. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III: Reign of Chaos and its expansion pack, The Frozen Throne",
+    link: "https://en.wikipedia.org/wiki/Dota_2",
+    image:
+      "https://cdn.cp.adobe.io/content/2/rendition/2fbc681c-bb10-4ddd-9d27-ae0764a88610/version/0/format/jpg/dimension/width/size/200",
+    user_id: 2,
+    category: "Article"
+  }
+];
 
 function Articles(props) {
+  useEffect(() => {
+    props.addArticle();
+  }, []);
 
-    // useEffect(() => {
-    //     props.addArticle();
-    // }, []);
 
 
-    return (
-        <div>
-            
+          <div className="article-buttons">
+            <button className="article-button">Read</button>
+            <div className="divider" />
+            <button className="article-button2">Add to Pinned</button>
+          </div>
         </div>
-    )
+
 }
 
 function mapStateToProps(state) {
-    return {
-        isTitleLoading: state.title.isLoading,
-    }
+  return {
+    isTitleLoading: state.title.isLoading
+  };
 }
 
 const mapDispatchToProps = {
-    addArticle
+  addArticle
 };
 
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Articles);
+export default connect(mapStateToProps, mapDispatchToProps)(Articles);
