@@ -175,6 +175,7 @@
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 20px;
 }
 
 .article-button2 {
@@ -186,4 +187,5 @@
   color: #5193b3;
   border: 2px solid #5193b3;
   border-radius: 5px;
+  font-size: 20px;
 }
