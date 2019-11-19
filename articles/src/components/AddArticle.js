@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import api from '../utils/api'
 
 function AddArticle(props) {
     const [newArticle, setNewArticle] = useState({
-        title: '',
-        summary: ''
+        id: Date.now(),
+        title: "",
+        summary: "",
+        link: "",
+        image: "",
+        user_id: 1,
+        category: ""
     })
 
     const handleChange = event => {
@@ -27,6 +33,7 @@ function AddArticle(props) {
     return (
         <div> 
             <form onSubmit={handleSubmit}>
+                <label>Add Article</label>
                 <input 
                     type='text'
                     name='title'
@@ -41,7 +48,7 @@ function AddArticle(props) {
                     value={newArticle.summary}
                     onChange={handleChange}
                 />
-                <button type='submit'>Add Article</button>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     )

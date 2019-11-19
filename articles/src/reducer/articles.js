@@ -1,4 +1,3 @@
-
 import {
     ADD_TITLE, 
     REMOVE_TITLE,
@@ -8,7 +7,14 @@ import {
 
 
 const initialState = {
+    id: Date.now(),
     title: "",
+    summary: "",
+    link: "",
+    image: "",
+    user_id: 1,
+    category: "",
+
     isLoading: false,
     error: null
 };
@@ -20,25 +26,26 @@ export function reducer(state = initialState, action) {
                 ...state, 
                 isLoading: true
             };
-            case ARTICLE_SUCCESS:
-                return {
-                    ...state, 
-                    title: action.payload,
-                    isLoading: false
-                };
-                case ARTICLE_ERROR:
-                    return {
-                        ...state,
-                        error: action.payload,
-                        isLoading: false
-                    }
+        case ARTICLE_SUCCESS:
+            return {
+                ...state, 
+                title: action.payload,
+                isLoading: false
+            };
+        case ARTICLE_ERROR:
+            return {
+                ...state,
+                error: action.payload,
+                isLoading: false
+            }
+
         case REMOVE_TITLE:
             return {
                 ...state,
                 title: action.payload
             }
-                    default:
-                        return state;
+        default:
+            return state;
     }
 }
 

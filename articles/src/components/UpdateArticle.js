@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import api from '../utils/api';
 
 
@@ -29,6 +29,7 @@ function UpdateArticle(props) {
     return (
         <div> 
             <form onSubmit={handleSubmit}>
+                <label>Update Article</label>
                 <input 
                     type='text'
                     name='title'

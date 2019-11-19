@@ -1,15 +1,19 @@
-import React from "react";
-import { Link, Route, withRouter } from "react-router-dom";
-import { getToken } from "./utils/api";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./components/Login";
-import Logout from "./components/Logout";
-import Dashboard from "./components/Dashboard";
-import Articles from "./components/Articles";
-import UpdateArticle from "./components/UpdateArticle";
-import Register from "./components/Register";
 
-import "./App.css";
+import React from 'react';
+import { Link, Route, withRouter } from 'react-router-dom';
+
+import { getToken } from './utils/api';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './components/Login';
+import Logout from './components/Logout';
+import Dashboard from './components/Dashboard';
+import Articles from './components/Articles';
+import UpdateArticle from './components/UpdateArticle';
+import Register from './components/Register'
+import AddArticle from './components/AddArticle';
+
+
+import './App.css';
 
 function App() {
   const signedIn = getToken();
@@ -22,16 +26,20 @@ function App() {
 
           {!signedIn && <Link to="/login">Login</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/articles">Articles</Link>
-          <Link to="/updatearticle">Update Article</Link>
-        </nav>
 
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-        <ProtectedRoute exact path="/articles" component={Articles} />
-        <ProtectedRoute exact path="/updatearticle" component={UpdateArticle} />
+          <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/articles'>Articles</Link>
+          <Link to='/addarticle'>Add Article</Link>
+          <Link to='/updatearticle'>Update Article</Link>
+          </nav>
+
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
+        <ProtectedRoute exact path='/dashboard' component={Dashboard} />
+        <ProtectedRoute exact path='/articles' component={Articles} />
+        <ProtectedRoute exact path='/addarticle' component={AddArticle} />
+        <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />
+
         <ProtectedRoute exact path="/logout" component={Logout} />
       </div>
     </div>
