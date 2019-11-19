@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard';
 import Articles from './components/Articles';
 import UpdateArticle from './components/UpdateArticle';
 import Register from './components/Register'
+import AddArticle from './components/AddArticle';
 
 
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
           {signedIn && <Link to="/logout">Logout</Link>}
           <Link to='/dashboard'>Dashboard</Link>
           <Link to='/articles'>Articles</Link>
+          <Link to='/addarticle'>Add Article</Link>
           <Link to='/updatearticle'>Update Article</Link>
           </nav>
 
@@ -33,6 +35,7 @@ function App() {
           <Route exact path='/login' component={Login} />
         <ProtectedRoute exact path='/dashboard' component={Dashboard} />
         <ProtectedRoute exact path='/articles' component={Articles} />
+        <ProtectedRoute exact path='/addarticle' component={AddArticle} />
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
         <Articles />

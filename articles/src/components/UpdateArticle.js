@@ -29,6 +29,7 @@ function UpdateArticle(props) {
     return (
         <div> 
             <form onSubmit={handleSubmit}>
+                <label>Update Article</label>
                 <input 
                     type='text'
                     name='title'
