@@ -43,7 +43,6 @@ export function reducer(state = initialState, action) {
                 error: action.payload,
                 isLoading: false
             }
-
         case REMOVE_TITLE:
             return {
                 ...state,
@@ -62,12 +61,14 @@ export function reducer(state = initialState, action) {
         case POST_ARTICLE_SUCCESS:
             return {
                 ...state,
-                title: action.payload
+                title: action.payload,
+                isLoading: false
             }
         case POST_ARTICLE_ERROR:
             return {
                 ...state,
-                title: action.payload
+                title: action.payload,
+                isLoading: false
             }
         default:
             return state;

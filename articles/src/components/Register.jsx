@@ -1,60 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup';
-import api from '../utils/api';
+import { connect } from 'react-redux';
+import { registerUser } from '../action/register'
 
 const Register = ({ values, touched, errors }) => {
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  })
-
-  const handleChange = event => {
-    setUser({
-      ...user,
-      [event.target.name]: event.target.value
-    })
-  }
-
-  const whenSubmit = event => {
-    event.preventDefault();
-
-    api()
-      .post('api/auth/register', user)
-      .then(res => {
-        console.log(res)
-        setUser({
-          email: '',
-          password: ''
-        })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
 
   return (
     <div className="register">
       <div className="illustration">
         <img width="300px" src="img/register-illustration.svg" alt="lighthouse illustration" />
       </div>
-      <Form onSubmit={whenSubmit}>
+      <Form>
         <Field
         className="styled-input"
-          name="email"
-          value={values.email}
-          placeholder="email"
+          name="username"
+          value={values.username}
+          placeholder="username"
           type="text"
-          onChange={handleChange}
         />
-        {touched.email && errors.email && ( <p className="error">{errors.email}</p>)}
+        {touched.username && errors.username && (<p className="error">{errors.username}</p>)}
         <Field
         className="styled-input"
           name="password"
           value={values.password}
           placeholder="password"
           type="password"
-          onChange={handleChange}
           />
           {touched.password && errors.password && ( <p className="error">{errors.password}</p>)}
         <button className="primary-button" type="submit">Sign up</button>
@@ -64,23 +35,24 @@ const Register = ({ values, touched, errors }) => {
 };
 
 const FormikRegister = withFormik({
-  mapPropsValues({ email, password }) {
+  mapPropsValues({ username, password }) {
     return {
-      email: email || "",
+      username: username || "",
       password: password || ""
     }
   },
-  
-  handleSubmit(values) {
-    console.log(values);
-  },
 
   validationSchema: Yup.object().shape({
-    email: Yup.string().required("Email is required"),
+    username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
   }),
-
+  
+  handleSubmit(values, formikBag) {
+    console.log(formikBag)
+    formikBag.props.registerUser(values)
+    formikBag.resetForm({username:'', password:''})
+  },
 
 })(Register);
 
-export default FormikRegister;
+export default connect(null, {registerUser})(FormikRegister);
