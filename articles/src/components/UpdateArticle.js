@@ -21,7 +21,7 @@ function UpdateArticle(props) {
             .put('api/articles/:id', updateArticle)
             .then(res => {
                 console.log(res.data)
-                props.history.push(`/dashboard`)
+                props.history.push(`/`)
             })
             .catch(err => console.log(err))
     }

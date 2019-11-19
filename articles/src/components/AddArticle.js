@@ -25,7 +25,7 @@ function AddArticle(props) {
             .post('api/articles/', newArticle)
             .then(res => {
                 console.log(res.data)
-                props.history.push(`/dashboard`)
+                props.history.push(`/`)
             })
             .catch(err => console.log(err))
     }
