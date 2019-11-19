@@ -85,7 +85,7 @@
 
 .pinned-articles .card-image img {
   width: 100px;
-
+}
 .article-group .card-image{
   position: relative;
   overflow: hidden;
@@ -207,7 +207,7 @@
   border: 2px solid #5193b3;
   border-radius: 5px;
   font-size: 20px;
-
+}
 .search-form input{
   margin: 10px 0;
   padding: 0 10px;
