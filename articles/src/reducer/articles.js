@@ -2,7 +2,12 @@ import {
     ADD_TITLE, 
     REMOVE_TITLE,
     ARTICLE_SUCCESS,
-    ARTICLE_ERROR
+    ARTICLE_ERROR,
+
+    POST_ADD_TITLE,
+    POST_REMOVE_TITLE,
+    POST_ARTICLE_SUCCESS,
+    POST_ARTICLE_ERROR,
 } from '../action/articles';
 
 
@@ -29,8 +34,8 @@ export function reducer(state = initialState, action) {
         case ARTICLE_SUCCESS:
             return {
                 ...state, 
-                title: action.payload,
-                isLoading: false
+                isLoading: false,
+                title: action.payload
             };
         case ARTICLE_ERROR:
             return {
@@ -40,6 +45,26 @@ export function reducer(state = initialState, action) {
             }
 
         case REMOVE_TITLE:
+            return {
+                ...state,
+                title: action.payload
+            }
+        case POST_ADD_TITLE:
+            return {
+                ...state,
+                isLoading: false
+            }
+        case POST_REMOVE_TITLE:
+            return {
+                ...state,
+                title: action.payload
+            }
+        case POST_ARTICLE_SUCCESS:
+            return {
+                ...state,
+                title: action.payload
+            }
+        case POST_ARTICLE_ERROR:
             return {
                 ...state,
                 title: action.payload
