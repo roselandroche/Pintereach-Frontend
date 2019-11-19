@@ -20,3 +20,9 @@ ReactDOM.render(
     </Provider>,
     document.getElementById("root")
 );
+
+
+// const AppWithProvider = (<Provider store={store}>
+{/* <App/>
+</Provider>) */}
+// ReactDOM.render(AppWithProvider, document.getElementById('root'));
