@@ -25,9 +25,9 @@ function App() {
           {/* <Link to='/'>Home</Link> */}
 
           {!signedIn && <Link to="/login">Login</Link>}
+          {!signedIn && <Link to="/register">Register</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-
-          <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/'>Dashboard</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/addarticle'>Add Article</Link>
           <Link to='/updatearticle'>Update Article</Link>
@@ -35,7 +35,7 @@ function App() {
 
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
-        <ProtectedRoute exact path='/dashboard' component={Dashboard} />
+        <ProtectedRoute exact path='/' component={Dashboard} />
         <ProtectedRoute exact path='/articles' component={Articles} />
         <ProtectedRoute exact path='/addarticle' component={AddArticle} />
         <ProtectedRoute exact path='/updatearticle' component={UpdateArticle} />

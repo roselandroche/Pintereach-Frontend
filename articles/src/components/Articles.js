@@ -35,14 +35,15 @@ function Articles(props) {
   }, []);
 
 
-
-          <div className="article-buttons">
-            <button className="article-button">Read</button>
-            <div className="divider" />
-            <button className="article-button2">Add to Pinned</button>
-          </div>
-        </div>
-
+  return (
+  <div>
+    <div className="article-buttons">
+      <button className="article-button">Read</button>
+      <div className="divider" />
+      <button className="article-button2">Add to Pinned</button>
+    </div>
+  </div>
+)
 }
 
 function mapStateToProps(state) {
