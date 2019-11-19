@@ -50,7 +50,7 @@ function Articles(props) {
           <div className="article-buttons">
             <button className="article-button">Read</button>
             <div className="divider" />
-            <button className="article-button">Add to Pinned</button>
+            <button className="article-button2">Add to Pinned</button>
           </div>
         </div>
       </div>
