@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup';
 import { connect } from 'react-redux';
+import { registerUser } from '../action/register'
 
 const Register = ({ values, touched, errors }) => {
 
@@ -40,17 +41,17 @@ const FormikRegister = withFormik({
       password: password || ""
     }
   },
-  
-  handleSubmit(values) {
-    console.log(values);
-  },
 
   validationSchema: Yup.object().shape({
     email: Yup.string().required("Email is required"),
     password: Yup.string().required("Password is required"),
   }),
-
+  
+  handleSubmit(values, formikBag) {
+    formikBag.props.registerUser(values)
+    formikBag.resetForm()
+  },
 
 })(Register);
 
-export default FormikRegister;
+export default connect(null, {registerUser})(FormikRegister);
