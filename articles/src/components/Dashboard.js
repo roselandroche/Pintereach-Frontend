@@ -1,24 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './DashboardNav';
-import PinnedArticles from './PinnedArticles';
-import api from '../utils/api';
-
+import React, { useState, useEffect } from "react";
+import ArticleGroup from "./ArticleGroup";
+import Navbar from "./DashboardNav";
+import axios from "axios";
+import api from "../utils/api";
+import data from "./dummyData";
 
 function Dashboard() {
-    return (
-      <div>
-        <h2>My Dashboard</h2>
-        {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
-        
-        <Navbar />
-        <PinnedArticles/>
-       </div>
-    )
+  const [articles, setArticles] = useState([]);
+  const [filteredArticles, updateArticles] = useState([]);
+
+  const search = array => {
+    updateArticles(array);
+  };
+
+  useEffect(() => {
+    setArticles(data);
+    updateArticles(data);
+
+    api().get('/api/articles').then(res=>{
+        console.log(res)
+    })
+  }, []);
+
+  return (
+    <div>
+      {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
+{/* :D */}
+      <Navbar />
+      <ArticleGroup
+        search={search}
+        name="Resources"
+        articles={articles}
+        articleFilter={filteredArticles}
+      />
+    </div>
+  );
 }
 
-
-
-{/* <Form>
+{
+  /* <Form>
 
 { touched.category && errors.category && <p className='error'>{errors.category}</p> }
 <Field component="select" name="category">
@@ -41,6 +61,7 @@ export default withFormik({
                category: values.category || ''
            }
         },
-} */}
+} */
+}
 
-export default Dashboard
+export default Dashboard;
