@@ -17,16 +17,6 @@ export const POST_ARTICLE_ERROR = "POST_ARTICLE_ERROR";
 export const addArticle = (title) => {
     return dispatch => {
     dispatch({ type: ADD_TITLE, payload: title });
-
-    // api()
-    //     .get(`api/articles/${title}`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         dispatch({ type: ARTICLE_SUCCESS, payload: res.data });
-    //     })
-    //     .catch(err => {
-    //         dispatch({ type: ARTICLE_ERROR, payload: err.response.error })
-    //     });
     };
 }
 
