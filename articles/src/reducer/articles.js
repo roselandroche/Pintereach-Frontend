@@ -1,8 +1,8 @@
 import {
-    ADD_TITLE, 
-    REMOVE_TITLE,
-    ARTICLE_SUCCESS,
-    ARTICLE_ERROR,
+    FETCH_ADD_TITLE, 
+    FETCH_REMOVE_TITLE,
+    FETCH_ARTICLE_SUCCESS,
+    FETCH_ARTICLE_ERROR,
 
     POST_ADD_TITLE,
     POST_REMOVE_TITLE,
@@ -26,24 +26,24 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
     switch(action.type) {
-        case ADD_TITLE:
+        case FETCH_ADD_TITLE:
             return {
                 ...state, 
                 isLoading: true
             };
-        case ARTICLE_SUCCESS:
+        case FETCH_ARTICLE_SUCCESS:
             return {
                 ...state, 
                 isLoading: false,
                 title: action.payload
             };
-        case ARTICLE_ERROR:
+        case FETCH_ARTICLE_ERROR:
             return {
                 ...state,
                 error: action.payload,
                 isLoading: false
             }
-        case REMOVE_TITLE:
+        case FETCH_REMOVE_TITLE:
             return {
                 ...state,
                 title: action.payload
