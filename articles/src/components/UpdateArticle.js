@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
-
+import { updateArticle } from '../action/update'
+import { connect } from 'react-redux'
 
 function UpdateArticle(props) {
     const [updateArticle, setUpdatedArticle] = useState({
-        title: '',
-        summary: ''
+        id: Date.now(),
+        title: "",
+        summary: "",
+        link: "",
+        image: "",
+        user_id: 1,
+        category: ""
     })
 
     const handleChange = event => {
@@ -17,13 +23,16 @@ function UpdateArticle(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        api()
-            .put('api/articles/:id', updateArticle)
-            .then(res => {
-                console.log(res.data)
-                props.history.push(`/`)
-            })
-            .catch(err => console.log(err))
+        props.updateArticle(updateArticle)
+        setUpdatedArticle({
+            id: Date.now(),
+            title: "",
+            summary: "",
+            link: "",
+            image: "",
+            user_id: 1,
+            category: ""
+        })
     }
 
     return (
@@ -44,10 +53,33 @@ function UpdateArticle(props) {
                     value={updateArticle.summary}
                     onChange={handleChange}
                 />
+                <input 
+                    type='text'
+                    name='link'
+                    placeholder='Link'
+                    value={updateArticle.link}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='text'
+                    name='image'
+                    placeholder='Image'
+                    value={updateArticle.image}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='text'
+                    name='category'
+                    placeholder='Category'
+                    value={updateArticle.category}
+                    onChange={handleChange}
+                />
                 <button type='submit'>Update</button>
             </form>
         </div>
     )
 }
 
-export default UpdateArticle
+const mapDispatchToProps = {updateArticle}
+
+export default connect(null, mapDispatchToProps)(UpdateArticle)

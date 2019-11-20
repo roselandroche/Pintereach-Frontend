@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { addArticle } from "../action/articles";
+// import { addArticle } from "../action/articles";
 import Navbar from "./DashboardNav";
 import api from "../utils/api";
 
@@ -30,9 +30,9 @@ const data = [
 ];
 
 function Articles(props) {
-  useEffect(() => {
-    props.addArticle();
-  }, []);
+  // useEffect(() => {
+  //   props.addArticle();
+  // }, []);
 
 
   return (
@@ -53,7 +53,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  addArticle
+  // addArticle
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);
