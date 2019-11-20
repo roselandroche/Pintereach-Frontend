@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ArticleGroup from "./ArticleGroup";
 import Navbar from "./DashboardNav";
-import axios from "axios";
 import api from "../utils/api";
 import data from "./dummyData";
 
@@ -37,7 +36,6 @@ function Dashboard() {
   );
 }
 
-{
   /* <Form>
 
 { touched.category && errors.category && <p className='error'>{errors.category}</p> }
@@ -62,6 +60,5 @@ export default withFormik({
            }
         },
 } */
-}
 
 export default Dashboard;
