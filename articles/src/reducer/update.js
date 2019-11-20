@@ -20,7 +20,8 @@ export function reducer(state = initialState, action) {
         case FETCH_UPDATE_SUCCESS: 
             return {
                 ...state,
-                posted: true
+                posted: true,
+                isLoading: false
             }
         case FETCH_UPDATE_FAILURE: 
             return {

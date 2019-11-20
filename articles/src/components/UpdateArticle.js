@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import api from '../utils/api';
-import { updateArticle } from '../action/update'
+import { updateArticle } from '../action/update';
 import { connect } from 'react-redux'
 
 function UpdateArticle(props) {
