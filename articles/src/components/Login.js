@@ -32,16 +32,17 @@ function Login(props) {
     }
 
     return (
-        <>
-            <h1>Welcome to Pintereach!</h1>
+        <div className="login">
+            <h1>Welcome to Pintereach</h1>
+            <img width="300px" src="img/login-illustration.svg" alt="lighthouse illustration" />
         <form onSubmit={handleSubmit}>
             {error && <div className='error'>{error}</div>}
-            <input type='text' name='username' placeholder="Username" value={status.username} onChange={handleChange} />
-            <input type='password' name='password' placeholder="Password" value={status.password} onChange={handleChange} />
+            <input className="styled-input" type='text' name='username' placeholder="Username" value={status.username} onChange={handleChange} />
+            <input className="styled-input" type='password' name='password' placeholder="Password" value={status.password} onChange={handleChange} />
 
-            <button type='submit'>Login</button>
+            <button className="primary-button" type='submit'>Login</button>
         </form>
-        </>
+        </div>
     )
 }
 
