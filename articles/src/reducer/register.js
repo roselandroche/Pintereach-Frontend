@@ -4,13 +4,13 @@ import {
     FETCH_REGISTER_ERROR,
 } from '../action/register';
 
-const initialState ={
+const initialState = {
     isLoading: false,
     error: null,
     users: [],
 }
 
-export function reducer(state =initialState, action) {
+export function reducer(state = initialState, action) {
     switch(action.type) {
         case FETCH_REGISTER_REQUEST:
             return {

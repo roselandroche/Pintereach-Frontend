@@ -13,8 +13,12 @@ const updateArticle = () => {
             .put(`api/articles/:id`)
             .then(res => {
                 console.log(res.data)
+                dispatch({ type: FETCH_UPDATE_SUCCESS })
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                dispatch({ type: FETCH_UDPATE_FAILURE })
+            })
         }
     )
 }
