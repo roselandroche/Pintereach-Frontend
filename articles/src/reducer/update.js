@@ -25,7 +25,7 @@ export function reducer(state = initialState, action) {
         case FETCH_UPDATE_FAILURE: 
             return {
                 ...state,
-                error: action.payload
+                isLoading: false
             }
         default:
             return state;
