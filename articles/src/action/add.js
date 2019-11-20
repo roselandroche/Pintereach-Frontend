@@ -9,12 +9,12 @@ export const addArticle = (title) => {
         dispatch({ type: FETCH_ADD_START, payload: title });
 
     api()
-        .post('api/articles' , title)
+        .post('api/articles', title)
         .then((res) => {
-            dispatchEvent({ type: FETCH_ADD_SUCCESS, payload: res.data });
+            dispatch({ type: FETCH_ADD_SUCCESS, payload: res.data });
         })
         .catch(err => {
-            dispatchEvent({ type: FETCH_ADD_FAILURE, payload: err.response.error })
+            dispatch({ type: FETCH_ADD_FAILURE, payload: err.response.error })
         })
     }
 }
