@@ -22,7 +22,7 @@ export const postTitle = (title) => dispatch => {
     dispatchEvent({ type: POST_ADD_TITLE });
 
     api()
-        .post('' , title)
+        .post('api/articles' , title)
         .then((res) => {
             dispatchEvent({ type: POST_ARTICLE_SUCCESS, payload: res.data });
         })

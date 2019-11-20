@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import api from '../utils/api'
+import { postTitle } from '../action/articles'
 
 function AddArticle(props) {
     const [newArticle, setNewArticle] = useState({
@@ -21,13 +22,15 @@ function AddArticle(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        api()
-            .post('api/articles/', newArticle)
-            .then(res => {
-                console.log(res.data)
-                props.history.push(`/`)
-            })
-            .catch(err => console.log(err))
+        postTitle()
+        console.log(`Article posted`)
+        // api()
+        //     .post('api/articles/', newArticle)
+        //     .then(res => {
+        //         console.log(res.data)
+        //         props.history.push(`/`)
+        //     })
+        //     .catch(err => console.log(err))
     }
 
     return (
