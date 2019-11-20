@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
-
 import { getToken } from './utils/api';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
@@ -12,8 +10,8 @@ import UpdateArticle from './components/UpdateArticle';
 import Register from './components/Register'
 import AddArticle from './components/AddArticle';
 
-
 import './App.css';
+
 
 function App() {
   const signedIn = getToken();
@@ -22,7 +20,6 @@ function App() {
     <div className="wrapper">
       <div className="App">
         <nav>
-          {/* <Link to='/'>Home</Link> */}
 
           {!signedIn && <Link to="/login">Login</Link>}
           {!signedIn && <Link to="/register">Register</Link>}

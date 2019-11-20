@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 // import { addArticle } from "../action/articles";
 import Navbar from "./DashboardNav";
-import api from "../utils/api";
+
 
 const data = [
   {
@@ -30,9 +30,9 @@ const data = [
 ];
 
 function Articles(props) {
-  useEffect(() => {
-    props.addArticle();
-  }, []);
+  // useEffect(() => {
+  //   props.addArticle();
+  // }, []);
 
   return (
     <div>
