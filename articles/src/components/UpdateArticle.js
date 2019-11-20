@@ -4,8 +4,13 @@ import api from '../utils/api';
 
 function UpdateArticle(props) {
     const [updateArticle, setUpdatedArticle] = useState({
-        title: '',
-        summary: ''
+        id: Date.now(),
+        title: "",
+        summary: "",
+        link: "",
+        image: "",
+        user_id: 1,
+        category: ""
     })
 
     const handleChange = event => {
@@ -22,8 +27,18 @@ function UpdateArticle(props) {
             .then(res => {
                 console.log(res.data)
                 props.history.push(`/`)
+                console.log(`Article updated`)
             })
             .catch(err => console.log(err))
+        setUpdatedArticle({
+            id: Date.now(),
+            title: "",
+            summary: "",
+            link: "",
+            image: "",
+            user_id: 1,
+            category: ""
+        })
     }
 
     return (
@@ -42,6 +57,27 @@ function UpdateArticle(props) {
                     name='summary'
                     placeholder='Summary'
                     value={updateArticle.summary}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='text'
+                    name='link'
+                    placeholder='Link'
+                    value={updateArticle.link}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='text'
+                    name='image'
+                    placeholder='Image'
+                    value={updateArticle.image}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='text'
+                    name='category'
+                    placeholder='Category'
+                    value={updateArticle.category}
                     onChange={handleChange}
                 />
                 <button type='submit'>Update</button>
