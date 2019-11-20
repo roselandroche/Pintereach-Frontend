@@ -30,20 +30,36 @@ const data = [
 ];
 
 function Articles(props) {
-  // useEffect(() => {
-  //   props.addArticle();
-  // }, []);
-
+  useEffect(() => {
+    props.addArticle();
+  }, []);
 
   return (
-  <div>
-    <div className="article-buttons">
-      <button className="article-button">Read</button>
-      <div className="divider" />
-      <button className="article-button2">Add to Pinned</button>
+    <div>
+      <Navbar />
+      <div className="article-container">
+        <div className="article-image">
+          <img src={data[0].image} alt="" />
+        </div>
+        <div className="article-information">
+          <h3>{data[0].title}</h3>
+          <p>By Edward Snowden</p>
+          <button className="book-button">Book</button>
+          <p className="summary">{data[0].summary} </p>
+
+          <div className="article-buttons">
+            <button className="article-button">Read</button>
+            <div className="divider" />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-)
+
+    //  {props.isTitleLoading ? (
+    //     <div className='spinner' />
+    // )}
+  );
+
 }
 
 function mapStateToProps(state) {
