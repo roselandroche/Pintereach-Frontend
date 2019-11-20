@@ -9,7 +9,7 @@ export default function () {
         // need base URL for axios
         baseURL: "https://lambda-bw-pintereach.herokuapp.com/",
         headers: {
-            Authorization: getToken(),
+            'Authorization': getToken(),
         }
     })
 }
