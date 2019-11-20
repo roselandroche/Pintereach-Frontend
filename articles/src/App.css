@@ -22,7 +22,6 @@
 }
 
 
-
 .navbar {
   height: 50px;
   background: #5193b3;
@@ -30,7 +29,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  
 }
 
 .navbar .logo {
@@ -38,21 +36,21 @@
   font-weight: bold;
 }
 
-.navbar .add-button{
+.navbar .add-button {
   color: white;
   text-decoration: none;
   background: #64c4c3;
   height: 25px;
   width: 50px;
   font-weight: bold;
-  padding-top: 5px ;
+  padding-top: 5px;
 }
+
 
 .article-group{
   background: #f1f1f1;
   padding: 10px;
   height: 100vh;
-
 }
 
 .article-group .articles{
@@ -74,6 +72,7 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
 .article-group .card .card-content .category{
   background: #cdcdcd;
   display: inline-block;
@@ -82,22 +81,25 @@
   font-size: 14px;
 }
 
-
+.pinned-articles .card-image img {
+  width: 100px;
+}
 
 .article-group .card-image{
   position: relative;
   overflow: hidden;
+
   height: 150px;
   width: 100px;
   border-radius: 5px;
 }
+
 .article-group .card-image img{
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
 }
-
 
 .article-group .title{
   text-align: left;
@@ -116,7 +118,7 @@
   transform: translate(-50%, -50%);
 }
 
-.styled-input{
+.styled-input {
   width: 80%;
   height: 50px;
   margin: 10px auto;
@@ -124,10 +126,9 @@
   border: solid 2px #cdcdcd;
   background: white;
   display: block;
-  
-  
 }
-.primary-button{
+
+.primary-button {
   display: block;
   width: 80%;
   height: 50px;
@@ -136,6 +137,74 @@
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+  .primary-button:hover {
+    transform: scale(1.03);
+  }
+
+
+/* articles component */
+.article-container {
+  display: flex;
+  padding: 150px;
+  align-items: flex-start;
+}
+
+.article-image {
+  margin-top: 34px;
+}
+
+.book-button {
+  background: lightgray;
+  height: 40px;
+  width: 100px;
+}
+
+.article-information {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.summary {
+  text-align: left
+}
+
+.article-buttons {
+  display: flex;
+  width: 100%;
+}
+
+.divider {
+  width: 10px;
+  height: auto;
+  display: inline-block;
+}
+
+.article-button {
+  display: block;
+  width: 100%;
+  height: 75px;
+  margin: 0 auto;
+  background: #5193b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.article-button2 {
+  display: block;
+  width: 100%;
+  height: 75px;
+  margin: 0 auto;
+  background: white;
+  color: #5193b3;
+  border: 2px solid #5193b3;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .search-form input{

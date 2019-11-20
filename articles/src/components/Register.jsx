@@ -1,8 +1,11 @@
 import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup';
+import { connect } from 'react-redux';
+import { registerUser } from '../action/register'
 
 const Register = ({ values, touched, errors }) => {
+
   return (
     <div className="register">
       <div className="illustration">
@@ -11,12 +14,12 @@ const Register = ({ values, touched, errors }) => {
       <Form>
         <Field
         className="styled-input"
-          name="email"
-          value={values.email}
-          placeholder="email"
+          name="username"
+          value={values.username}
+          placeholder="username"
           type="text"
         />
-        {touched.email && errors.email && ( <p className="error">{errors.email}</p>)}
+        {touched.username && errors.username && (<p className="error">{errors.username}</p>)}
         <Field
         className="styled-input"
           name="password"
@@ -32,23 +35,24 @@ const Register = ({ values, touched, errors }) => {
 };
 
 const FormikRegister = withFormik({
-  mapPropsValues({ email, password }) {
+  mapPropsValues({ username, password }) {
     return {
-      email: email || "",
+      username: username || "",
       password: password || ""
     }
   },
-  
-  handleSubmit(values) {
-    console.log(values);
-  },
 
   validationSchema: Yup.object().shape({
-    email: Yup.string().required("Email is required"),
+    username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
   }),
-
+  
+  handleSubmit(values, formikBag) {
+    console.log(formikBag)
+    formikBag.props.registerUser(values)
+    formikBag.resetForm({username:'', password:''})
+  },
 
 })(Register);
 
-export default FormikRegister;
+export default connect(null, {registerUser})(FormikRegister);

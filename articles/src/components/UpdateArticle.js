@@ -21,7 +21,7 @@ function UpdateArticle(props) {
             .put('api/articles/:id', updateArticle)
             .then(res => {
                 console.log(res.data)
-                props.history.push(`/dashboard`)
+                props.history.push(`/`)
             })
             .catch(err => console.log(err))
     }
@@ -29,6 +29,7 @@ function UpdateArticle(props) {
     return (
         <div> 
             <form onSubmit={handleSubmit}>
+                <label>Update Article</label>
                 <input 
                     type='text'
                     name='title'
