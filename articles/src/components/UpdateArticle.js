@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
-
+import { updateArticle } from '../action/update'
+import { connect } from 'react-redux'
 
 function UpdateArticle(props) {
     const [updateArticle, setUpdatedArticle] = useState({
@@ -22,14 +23,7 @@ function UpdateArticle(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        api()
-            .put('api/articles/:id', updateArticle)
-            .then(res => {
-                console.log(res.data)
-                props.history.push(`/`)
-                console.log(`Article updated`)
-            })
-            .catch(err => console.log(err))
+        props.updateArticle(updateArticle)
         setUpdatedArticle({
             id: Date.now(),
             title: "",
@@ -86,4 +80,6 @@ function UpdateArticle(props) {
     )
 }
 
-export default UpdateArticle
+const mapDispatchToProps = {updateArticle}
+
+export default connect(null, mapDispatchToProps)(UpdateArticle)

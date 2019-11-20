@@ -1,7 +1,7 @@
 import {
     FETCH_UPDATE_START,
     FETCH_UPDATE_SUCCESS,
-    FETCH_UDPATE_FAILURE,
+    FETCH_UPDATE_FAILURE,
 } from '../action/update';
 
 const initialState = {
