@@ -64,6 +64,8 @@
 .article-group .card{
   text-align: left;
   margin: 20px 0px 10px 15px;
+  text-decoration: none;
+  color: #353535;
 }
 
 .article-group .card .card-content .title{
