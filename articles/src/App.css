@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  
+
 }
 
 .navbar .logo {
@@ -49,24 +49,24 @@
 }
 
 
-.article-group{
+.article-group {
   background: #f1f1f1;
   padding: 10px;
   height: 100vh;
 }
 
-.article-group .articles{
+.article-group .articles {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 }
 
-.article-group .card{
+.article-group .card {
   text-align: left;
   margin: 20px 0px 10px 15px;
 }
 
-.article-group .card .card-content .title{
+.article-group .card .card-content .title {
   width: 100px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -74,7 +74,7 @@
 }
 
 
-.article-group .card .card-content .category{
+.article-group .card .card-content .category {
   background: #cdcdcd;
   display: inline-block;
   padding: 2px 5px;
@@ -85,8 +85,9 @@
 
 .pinned-articles .card-image img {
   width: 100px;
+}
 
-.article-group .card-image{
+.article-group .card-image {
   position: relative;
   overflow: hidden;
 
@@ -94,7 +95,8 @@
   width: 100px;
   border-radius: 5px;
 }
-.article-group .card-image img{
+
+.article-group .card-image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -102,7 +104,7 @@
 }
 
 
-.article-group .title{
+.article-group .title {
   text-align: left;
   font-weight: bold;
   color: #363636;
@@ -207,8 +209,9 @@
   border: 2px solid #5193b3;
   border-radius: 5px;
   font-size: 20px;
+}
 
-.search-form input{
+.search-form input {
   margin: 10px 0;
   padding: 0 10px;
   width: 90%;
