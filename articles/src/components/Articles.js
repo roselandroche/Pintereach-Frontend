@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { addArticle } from "../action/articles";
+// import { addArticle } from "../action/articles";
 import Navbar from "./DashboardNav";
 import api from "../utils/api";
 
@@ -59,6 +59,7 @@ function Articles(props) {
     //     <div className='spinner' />
     // )}
   );
+
 }
 
 function mapStateToProps(state) {
@@ -68,7 +69,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  addArticle
+  // addArticle
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);

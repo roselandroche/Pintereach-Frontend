@@ -5,11 +5,12 @@ export function getToken() {
 }
 
 export default function () {
+    const token = localStorage.getItem('token')
     return axios.create({
         // need base URL for axios
         baseURL: "https://lambda-bw-pintereach.herokuapp.com/",
         headers: {
-            Authorization: localStorage.getItem('token'),
+            Authorization: token,
         }
     })
 }

@@ -1,49 +1,36 @@
 import {
-    ADD_TITLE, 
-    REMOVE_TITLE,
-    ARTICLE_SUCCESS,
-    ARTICLE_ERROR
-} from '../action/articles';
+    FETCH_ADD_START, 
+    FETCH_ADD_SUCCESS,
+    FETCH_ADD_FAILURE,
+} from '../action/add';
 
 
 const initialState = {
-    id: Date.now(),
-    title: "",
-    summary: "",
-    link: "",
-    image: "",
-    user_id: 1,
-    category: "",
-
     isLoading: false,
-    error: null
+    error: null,
+    added: false
 };
 
 export function reducer(state = initialState, action) {
     switch(action.type) {
-        case ADD_TITLE:
+        case FETCH_ADD_START:
             return {
                 ...state, 
                 isLoading: true
             };
-        case ARTICLE_SUCCESS:
+        case FETCH_ADD_SUCCESS:
             return {
                 ...state, 
-                title: action.payload,
-                isLoading: false
+                isLoading: false,
+                added: true
             };
-        case ARTICLE_ERROR:
+        case FETCH_ADD_FAILURE:
             return {
                 ...state,
                 error: action.payload,
                 isLoading: false
             }
-
-        case REMOVE_TITLE:
-            return {
-                ...state,
-                title: action.payload
-            }
+        
         default:
             return state;
     }

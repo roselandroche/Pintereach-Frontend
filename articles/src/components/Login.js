@@ -23,8 +23,8 @@ function Login(props) {
             .post("/api/auth/login", status)
             .then(res => {
                 console.log(res.data)
-                localStorage.setItem('token', res.data.payload)
-                props.history.push('/dashboard')
+                localStorage.setItem('token', res.data.token)
+                props.history.push('/')
             })
             .catch(err => {
                 setError(err.res)
@@ -32,16 +32,18 @@ function Login(props) {
     }
 
     return (
-        <>
-            <h1>Welcome to Pintereach!</h1>
-            <form onSubmit={handleSubmit}>
-                {error && <div className='error'>{error}</div>}
-                <input type='text' name='username' placeholder="Username" value={status.username} onChange={handleChange} />
-                <input type='password' name='password' placeholder="Password" value={status.password} onChange={handleChange} />
+        <div className="login">
+            <h1>Welcome to Pintereach</h1>
+            <img width="300px" src="img/login-illustration.svg" alt="lighthouse illustration" />
+        <form onSubmit={handleSubmit}>
+            {error && <div className='error'>{error}</div>}
+            <input className="styled-input" type='text' name='username' placeholder="Username" value={status.username} onChange={handleChange} />
+            <input className="styled-input" type='password' name='password' placeholder="Password" value={status.password} onChange={handleChange} />
 
-                <button type='submit'>Login</button>
-            </form>
-        </>
+            <button className="primary-button" type='submit'>Login</button>
+        </form>
+        </div>
+
     )
 }
 
