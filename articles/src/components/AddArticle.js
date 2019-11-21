@@ -34,6 +34,7 @@ function AddArticle(props) {
             // category_id: 1,
             category_name: ""
         })
+        props.history.push('/')
     }
 
     return (
