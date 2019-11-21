@@ -22,6 +22,7 @@ function App() {
           {!signedIn && <Link to="/login">Login</Link>}
           {!signedIn && <Link to="/register">Register</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
+
           <Link to="/">Dashboard</Link>
           <Link to="/articles/:id">Articles</Link>
           <Link to="/addarticle">Add Article</Link>
@@ -34,7 +35,6 @@ function App() {
         <ProtectedRoute exact path="/articles/:id" component={Articles} />
         <ProtectedRoute exact path="/addarticle" component={AddArticle} />
         <ProtectedRoute exact path="/updatearticle" component={UpdateArticle} />
-
         <ProtectedRoute exact path="/logout" component={Logout} />
       </div>
     </div>

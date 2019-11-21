@@ -38,14 +38,15 @@ function UpdateArticle({ props, refresh, article }) {
 
     const deleteArticle = (article) => {
         if (window.confirm('Delete this article?')) {
-            api().delete('/api/articles/:id')
-            .then(refresh())
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+            api()
+                .delete('/api/articles/:id')
+                .then(refresh())
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
         }
     }
 
@@ -113,6 +114,7 @@ function UpdateArticle({ props, refresh, article }) {
                 </span>
                 </span>
                 <button type='submit'>Update</button>
+                <button type="danger">Delete</button>
             </form>
         </div>
         </>
