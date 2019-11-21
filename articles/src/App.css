@@ -36,21 +36,44 @@
   font-weight: bold;
 }
 
-.navbar .add-button {
+.navbar .nav-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 140px;
+}
+
+.navbar .nav-button-container .add-button {
   color: white;
   text-decoration: none;
   background: #64c4c3;
   height: 25px;
   width: 50px;
   font-weight: bold;
-  padding-top: 5px;
+  padding: 5px;
+  display: inline-block;
+}
+.navbar .nav-button-container .logout-button {
+  background: red;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  height: 25px;
+  width: 50px;
+
+}
+.navbar .logout-button img{
+  filter: invert();
 }
 
 
 .article-group {
   background: #f1f1f1;
   padding: 10px;
-  height: 100vh;
+  height: 100%;
 }
 
 .article-group .articles {
