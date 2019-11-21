@@ -8,7 +8,7 @@ function UpdateArticle({ props, refresh, article }) {
         id: Date.now(),
         title: "",
         summary: "",
-        link: "link",
+        link: "",
         image: "",
         user_id: 1,
         category_name: "",
