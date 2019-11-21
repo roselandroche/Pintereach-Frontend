@@ -12,7 +12,7 @@ export default function ArticleCard(props){
               </div>
               <div className="card-content">
                   <div className="title">{props.article.title}</div>
-                  <div className="category">{props.article.category}</div>
+                  <div className="category">{props.article.category_name}</div>
               </div>
           </Link>
     )

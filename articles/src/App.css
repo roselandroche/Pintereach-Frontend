@@ -250,3 +250,17 @@
 .login h1{
  color: #363636;
 }
+
+/* Update Article */
+
+.update-article{
+  max-width: 90%;
+  width: 400px;
+  margin: 20px auto;
+
+}
+.update-article h1{
+  font-size: 24px;
+  color: #363636;
+
+}
