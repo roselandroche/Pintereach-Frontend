@@ -22,12 +22,13 @@ export function reducer(state = initialState, action) {
             return {
                 ...state, 
                 isLoading: false,
-                added: [action.payload]
+                added: action.payload
             };
         case FETCH_ADD_FAILURE:
             return {
                 ...state,
-                isLoading: false
+                isLoading: false,
+                error: action.payload
             }
         
         default:
