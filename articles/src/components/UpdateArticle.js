@@ -113,6 +113,7 @@ function UpdateArticle({ props, refresh, article }) {
                 </span>
                 </span>
                 <button type='submit'>Update</button>
+                <button type="danger">Delete</button>
             </form>
         </div>
         </>
