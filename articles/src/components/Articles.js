@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 // import { addArticle } from "../action/articles";
-import Navbar from "./DashboardNav";
+import Navbar from "./Navbar";
 import api from "../utils/api";
 
 function Articles(props) {
@@ -23,7 +23,7 @@ function Articles(props) {
 
   return (
     <div>
-      <Navbar />
+      <Navbar title="Article" />
       <div className="article-container">
         <div className="article-image">
           <img src={article.image} alt="" />
