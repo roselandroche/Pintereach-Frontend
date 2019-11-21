@@ -10,7 +10,8 @@ function UpdateArticle(props) {
         link: "",
         image: "",
         user_id: 1,
-        category: ""
+        category_name: "",
+        category_id: 1
     })
 
     const handleChange = event => {
@@ -67,10 +68,24 @@ function UpdateArticle(props) {
                     onChange={handleChange}
                 />
                 <input 
+                    type='number'
+                    name='user_id'
+                    placeholder='User Id'
+                    value={updateArticle.user_id}
+                    onChange={handleChange}
+                />
+                <input 
                     type='text'
                     name='category'
                     placeholder='Category'
                     value={updateArticle.category}
+                    onChange={handleChange}
+                />
+                <input 
+                    type='number'
+                    name='category_id'
+                    placeholder='Category Id'
+                    value={updateArticle.category_id}
                     onChange={handleChange}
                 />
                 <button type='submit'>Update</button>
