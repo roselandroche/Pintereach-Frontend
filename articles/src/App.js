@@ -24,10 +24,10 @@ function App() {
           {!signedIn && <Link to="/login">Login</Link>}
           {!signedIn && <Link to="/register">Register</Link>}
           {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/'>Dashboard</Link>
+          {/* <Link to='/'>Dashboard</Link>
           <Link to='/articles'>Articles</Link>
           <Link to='/addarticle'>Add Article</Link>
-          <Link to='/updatearticle'>Update Article</Link>
+          <Link to='/updatearticle'>Update Article</Link> */}
           </nav>
 
           <Route exact path='/register' component={Register} />
