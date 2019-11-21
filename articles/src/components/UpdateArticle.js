@@ -23,7 +23,7 @@ function UpdateArticle({ props, refresh, article }) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        // props.updateArticle(updateArticle)
+        props.updateArticle(updateArticle)
         setUpdatedArticle({
             id: Date.now(),
             title: "",
