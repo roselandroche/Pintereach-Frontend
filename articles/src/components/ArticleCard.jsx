@@ -6,7 +6,7 @@ export default function ArticleCard(props){
 
     return (
         
-        <Link to={`/article/${props.article.id}`} className="card">
+        <Link to={`/articles/${props.article.id}`} className="card">
               <div className="card-image">
                 <img src={props.article.image} title={props.article.title} alt={props.article.title}/>
               </div>
