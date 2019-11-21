@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { updateArticle } from '../action/update';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import api from '../utils/api'
 
-function UpdateArticle(props) {
+function UpdateArticle({ props, refresh, article }) {
     const [updateArticle, setUpdatedArticle] = useState({
         id: Date.now(),
         title: "",
@@ -35,7 +36,21 @@ function UpdateArticle(props) {
         })
     }
 
+    const deleteArticle = (article) => {
+        if (window.confirm('Delete this article?')) {
+            api().delete('/api/articles/:id')
+            .then(refresh())
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+    }
+
     return (
+        <>
         <div> 
             <form onSubmit={handleSubmit}>
                 <label>Update Article</label>
@@ -88,9 +103,19 @@ function UpdateArticle(props) {
                     value={updateArticle.category_id}
                     onChange={handleChange}
                 />
+
+                <span>
+                    <span className="delete" onClick={e => {
+                        e.stopPropagation();
+                        deleteArticle(article)
+                    }
+                }>
+                </span>
+                </span>
                 <button type='submit'>Update</button>
             </form>
         </div>
+        </>
     )
 }
 

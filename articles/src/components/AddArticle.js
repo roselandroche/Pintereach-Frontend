@@ -8,7 +8,8 @@ function AddArticle() {
         link: "",
         image: "",
         user_id: 1,
-        category: ""
+        category_id: "",
+        category_name: ""
     })
 
     const handleChange = event => {
@@ -28,7 +29,8 @@ function AddArticle() {
             link: "",
             image: "",
             user_id: 1,
-            category: ""
+            category_id: "",
+            category_name: ""
         })
     }
 
