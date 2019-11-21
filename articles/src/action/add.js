@@ -4,7 +4,7 @@ export const FETCH_ADD_START = 'FETCH_ADD_START';
 export const FETCH_ADD_SUCCESS = 'FETCH_ADD_SUCCESS';
 export const FETCH_ADD_FAILURE = 'FETCH_ADD_FAILURE';
 
-export const addArticle = (title) => {
+export const postArticle = (title) => {
     return dispatch => {
         dispatch({ type: FETCH_ADD_START, payload: title });
 

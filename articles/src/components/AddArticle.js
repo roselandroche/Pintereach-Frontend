@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { postArticle } from '../action/add';
 
-function AddArticle() {
+function AddArticle(props) {
     const [newArticle, setNewArticle] = useState({
         id: Date.now(),
         title: "",
@@ -21,7 +23,7 @@ function AddArticle() {
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(`Article posted`)
+        props.postArticle(newArticle)
         setNewArticle({
             id: Date.now(),
             title: "",
@@ -70,7 +72,7 @@ function AddArticle() {
                     type='text'
                     name='category'
                     placeholder='Category'
-                    value={newArticle.category}
+                    value={newArticle.category_name}
                     onChange={handleChange}
                 />
                 <button type='submit'>Submit</button>
@@ -78,4 +80,7 @@ function AddArticle() {
         </div>
     )
 }
-export default AddArticle;
+const mapDispatchToProps = {
+    postArticle
+}
+export default connect(null, mapDispatchToProps)(AddArticle);
