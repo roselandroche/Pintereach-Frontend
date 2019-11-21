@@ -13,12 +13,12 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    setArticles(data);
-    updateArticles(data);
-
+    
     api()
-      .get('/api/articles')
-      .then(res=>{
+    .get('/api/articles')
+    .then(res=>{
+      setArticles(res.data);
+      updateArticles(res.data);
         console.log(res)
     })
       .catch(err => console.log(err.response))
