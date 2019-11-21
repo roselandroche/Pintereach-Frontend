@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup';
 import { connect } from 'react-redux';
 import { registerUser } from '../action/register'
+import {Link} from 'react-router-dom'
 
 const Register = ({ values, touched, errors }) => {
 
@@ -28,7 +29,8 @@ const Register = ({ values, touched, errors }) => {
           type="password"
           />
           {touched.password && errors.password && ( <p className="error">{errors.password}</p>)}
-        <button className="primary-button" type="submit">Sign up</button>
+        <button className="primary-button" type="submit">Register</button>
+        <div className="register-login">Have an account? <Link to='/login' className="button">Log in</Link> </div>
       </Form>
     </div>
   );
