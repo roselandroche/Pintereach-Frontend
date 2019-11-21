@@ -10,7 +10,7 @@ function AddArticle(props) {
         link: "",
         image: "",
         user_id: 1,
-        category_id: "",
+        // category_id: 1,
         category_name: ""
     })
 
@@ -31,7 +31,7 @@ function AddArticle(props) {
             link: "",
             image: "",
             user_id: 1,
-            category_id: "",
+            // category_id: 1,
             category_name: ""
         })
     }
@@ -68,10 +68,11 @@ function AddArticle(props) {
                     value={newArticle.image}
                     onChange={handleChange}
                 />
+                {/* Having issues getting changes to stay until submitted */}
                 <input 
                     type='text'
-                    name='category'
-                    placeholder='Category'
+                    name='category_name'
+                    placeholder='Category Name'
                     value={newArticle.category_name}
                     onChange={handleChange}
                 />

@@ -14,7 +14,7 @@ export const postArticle = (title) => {
             dispatch({ type: FETCH_ADD_SUCCESS, payload: res.data });
         })
         .catch(err => {
-            dispatch({ type: FETCH_ADD_FAILURE, payload: err.response.error })
+            dispatch({ type: FETCH_ADD_FAILURE, payload: err.response })
         })
     }
 }
