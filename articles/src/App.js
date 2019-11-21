@@ -19,16 +19,7 @@ function App() {
   return (
     <div className="wrapper">
       <div className="App">
-        <nav>
-
-          {!signedIn && <Link to="/login">Login</Link>}
-          {!signedIn && <Link to="/register">Register</Link>}
-          {signedIn && <Link to="/logout">Logout</Link>}
-          <Link to='/'>Dashboard</Link>
-          <Link to='/articles'>Articles</Link>
-          <Link to='/addarticle'>Add Article</Link>
-          <Link to='/updatearticle'>Update Article</Link>
-          </nav>
+       
 
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
