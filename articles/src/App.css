@@ -254,8 +254,7 @@
 /* Update Article */
 
 .update-article{
-  max-width: 90%;
-  width: 400px;
+  max-width: 500px;
   margin: 20px auto;
 
 }
@@ -263,4 +262,20 @@
   font-size: 24px;
   color: #363636;
 
+}
+
+.danger-button{
+  display: block;
+  width: 80%;
+  height: 50px;
+  margin: 10px auto;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-arrow{
+  filter: invert();
 }

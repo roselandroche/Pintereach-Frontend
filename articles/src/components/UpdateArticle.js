@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { updateArticle } from '../action/update';
-import { connect } from 'react-redux';
-import api from '../utils/api'
-import Navbar from './Navbar'
+import React, { useState } from "react";
+import { updateArticle } from "../action/update";
+import { connect } from "react-redux";
+import api from "../utils/api";
+import Navbar from "./Navbar";
 
 function UpdateArticle({ props, refresh, article }) {
-    const [updateArticle, setUpdatedArticle] = useState({
-        id: Date.now(),
-        title: "",
-        summary: "",
-        link: "",
-        image: "",
-        user_id: 1,
-        category_name: "",
-        category_id: 1
-    })
+  const [updateArticle, setUpdatedArticle] = useState({
+    id: Date.now(),
+    title: "",
+    summary: "",
+    link: "",
+    image: "",
+    user_id: 1,
+    category_name: "",
+    category_id: 1
+  });
 
   const handleChange = event => {
     setUpdatedArticle({
@@ -37,20 +37,20 @@ function UpdateArticle({ props, refresh, article }) {
     });
   };
 
-    const deleteArticle = (article) => {
-        if (window.confirm('Delete this article?')) {
-            api()
-                .delete('/api/articles/:id')
-                .then(refresh())
-                .then(res => {
-                    console.log(res)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
-        }
+  const deleteArticle = article => {
+    if (window.confirm("Delete this article?")) {
+      api()
+        .delete("/api/articles/:id")
+        .then(refresh())
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
-     return (
+  };
+  return (
     <div>
       <Navbar title="Update Article" />
       <div className="update-article">
@@ -99,7 +99,11 @@ function UpdateArticle({ props, refresh, article }) {
           <button className="primary-button" type="submit">
             Update
           </button>
-       <button type="danger">Delete</button>
+          <button
+          className="danger-button" 
+          type="danger">
+              Delete
+              </button>
         </form>
       </div>
     </div>
