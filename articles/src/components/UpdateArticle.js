@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { updateArticle } from "../action/update";
-import { connect } from "react-redux";
-import Navbar from "./Navbar";
+import React, { useState } from 'react';
+import { updateArticle } from '../action/update';
+import { connect } from 'react-redux';
+import api from '../utils/api'
+import Navbar from './Navbar'
 
-function UpdateArticle(props) {
-  const [updateArticle, setUpdatedArticle] = useState({
-    id: Date.now(),
-    title: "",
-    summary: "",
-    link: "",
-    image: "",
-    user_id: 1,
-    category: ""
-  });
+function UpdateArticle({ props, refresh, article }) {
+    const [updateArticle, setUpdatedArticle] = useState({
+        id: Date.now(),
+        title: "",
+        summary: "",
+        link: "",
+        image: "",
+        user_id: 1,
+        category_name: "",
+        category_id: 1
+    })
 
   const handleChange = event => {
     setUpdatedArticle({

@@ -6,7 +6,7 @@ function Login(props) {
     const [error, setError] = useState()
     const [status, setStatus] = useState({
         username: '',
-        password: '',
+        password: ''
     })
 
     const handleChange = (event) => {

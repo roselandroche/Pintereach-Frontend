@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar'
 
 function AddArticle() {
     const [newArticle, setNewArticle] = useState({
@@ -8,7 +9,8 @@ function AddArticle() {
         link: "",
         image: "",
         user_id: 1,
-        category: ""
+        category_id: "",
+        category_name: ""
     })
 
     const handleChange = event => {
@@ -28,51 +30,60 @@ function AddArticle() {
             link: "",
             image: "",
             user_id: 1,
-            category: ""
+            category_id: "",
+            category_name: ""
         })
     }
 
     return (
         <div> 
+            <Navbar title="Add Article" />
+            <div className="update-article">
+    <h1>Add Article</h1>
             <form onSubmit={handleSubmit}>
-                <label>Add Article</label>
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='title'
                     placeholder='Title'
                     value={newArticle.title}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='summary'
                     placeholder='Summary'
                     value={newArticle.summary}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='link'
                     placeholder='Link'
                     value={newArticle.link}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='image'
                     placeholder='Image'
                     value={newArticle.image}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='category'
                     placeholder='Category'
                     value={newArticle.category}
                     onChange={handleChange}
                 />
-                <button type='submit'>Submit</button>
+                <button className="primary-button" type='submit'>Submit</button>
             </form>
+            </div>
         </div>
     )
 }
