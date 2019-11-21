@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postArticle } from '../action/add';
+import Navbar from './Navbar';
+
 
 function AddArticle(props) {
     const [newArticle, setNewArticle] = useState({
@@ -39,46 +41,54 @@ function AddArticle(props) {
 
     return (
         <div> 
+            <Navbar title="Add Article" />
+            <div className="update-article">
+    <h1>Add Article</h1>
             <form onSubmit={handleSubmit}>
-                <label>Add Article</label>
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='title'
                     placeholder='Title'
                     value={newArticle.title}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='summary'
                     placeholder='Summary'
                     value={newArticle.summary}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='link'
                     placeholder='Link'
                     value={newArticle.link}
                     onChange={handleChange}
                 />
-                <input 
+                <input
+                className="styled-input" 
                     type='text'
                     name='image'
                     placeholder='Image'
                     value={newArticle.image}
                     onChange={handleChange}
                 />
-                {/* Having issues getting changes to stay until submitted */}
-                <input 
+                <input
+                className="styled-input" 
+
                     type='text'
                     name='category_name'
                     placeholder='Category Name'
                     value={newArticle.category_name}
                     onChange={handleChange}
                 />
-                <button type='submit'>Submit</button>
+                <button className="primary-button" type='submit'>Submit</button>
             </form>
+            </div>
         </div>
     )
 }

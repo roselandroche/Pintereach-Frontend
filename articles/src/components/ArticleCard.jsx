@@ -6,13 +6,13 @@ export default function ArticleCard(props){
 
     return (
         
-        <Link to={`/article/${props.article.id}`} className="card">
+        <Link to={`/articles/${props.article.id}`} className="card">
               <div className="card-image">
                 <img src={props.article.image} title={props.article.title} alt={props.article.title}/>
               </div>
               <div className="card-content">
                   <div className="title">{props.article.title}</div>
-                  <div className="category">{props.article.category}</div>
+                  <div className="category">{props.article.category_name}</div>
               </div>
           </Link>
     )
