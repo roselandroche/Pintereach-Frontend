@@ -63,7 +63,7 @@ function Login(props) {
 
         <div>or</div>
 
-        <Link to="/register">
+        <Link className="register-link" to="/register">
           <button className="secondary-button">Register</button>
         </Link>
       </form>
