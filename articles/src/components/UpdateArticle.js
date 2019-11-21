@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { updateArticle } from "../action/update";
-import { connect } from "react-redux";
-import Navbar from "./Navbar";
 
-function UpdateArticle(props) {
-  const [updateArticle, setUpdatedArticle] = useState({
-    id: Date.now(),
-    title: "",
-    summary: "",
-    link: "",
-    image: "",
-    user_id: 1,
-    category: ""
-  });
+import React, { useState } from 'react';
+import { updateArticle } from '../action/update';
+import { connect } from 'react-redux';
+import api from '../utils/api'
+
+function UpdateArticle({ props, refresh, article }) {
+    const [updateArticle, setUpdatedArticle] = useState({
+        id: Date.now(),
+        title: "",
+        summary: "",
+        link: "",
+        image: "",
+        user_id: 1,
+        category_name: "",
+        category_id: 1
+    })
 
   const handleChange = event => {
     setUpdatedArticle({
@@ -35,7 +37,20 @@ function UpdateArticle(props) {
     });
   };
 
-  return (
+    const deleteArticle = (article) => {
+        if (window.confirm('Delete this article?')) {
+            api().delete('/api/articles/:id')
+            .then(refresh())
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+    }
+
+     return (
     <div>
       <Navbar title="Update Article" />
       <div className="update-article">
