@@ -175,6 +175,19 @@
     transform: scale(1.03);
   }
 
+  .secondary-button {
+    display: block;
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    background: none;
+    color: #5193b3;
+    border: solid 2px #5193b3;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
 
 /* articles component */
 .article-container {
