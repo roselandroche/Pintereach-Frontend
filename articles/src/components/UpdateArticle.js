@@ -37,7 +37,20 @@ function UpdateArticle({ props, refresh, article }) {
     });
   };
 
-  return (
+    const deleteArticle = (article) => {
+        if (window.confirm('Delete this article?')) {
+            api().delete('/api/articles/:id')
+            .then(refresh())
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+    }
+
+     return (
     <div>
       <Navbar title="Update Article" />
       <div className="update-article">
