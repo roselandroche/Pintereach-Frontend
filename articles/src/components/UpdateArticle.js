@@ -43,7 +43,7 @@ function UpdateArticle(props, {refresh, article }) {
       link: "",
       image: "",
       user_id: 1,
-      category: ""
+      category_name: ""
     });
   };
 
@@ -103,7 +103,7 @@ function UpdateArticle(props, {refresh, article }) {
             type="text"
             name="category"
             placeholder="Category"
-            value={updateArticle.category}
+            value={updateArticle.category_name}
             onChange={handleChange}
           />
           <button className="primary-button" type="submit">
