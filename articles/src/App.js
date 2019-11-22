@@ -23,7 +23,7 @@ function App() {
         <ProtectedRoute exact path="/" component={Dashboard} />
         <ProtectedRoute exact path="/articles/:id" component={Articles} />
         <ProtectedRoute exact path="/addarticle" component={AddArticle} />
-        <ProtectedRoute exact path="/updatearticle" component={UpdateArticle} />
+        <ProtectedRoute exact path="/updatearticle/:id" component={UpdateArticle} />
         <ProtectedRoute exact path="/logout" component={Logout} />
       </div>
     </div>
