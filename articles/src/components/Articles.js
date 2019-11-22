@@ -25,8 +25,8 @@ function Articles(props) {
     <div>
       <Navbar title="Article" />
       <div className="article-container">
-        <div className="article-image">
-          <img src={article.image} alt="" />
+        <div className="article-div">
+          <img className="article-image" src={article.image} alt="" />
         </div>
         <div className="article-information">
           <h3>{article.title}</h3>
