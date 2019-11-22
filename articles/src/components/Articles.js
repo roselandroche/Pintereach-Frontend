@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-// import { addArticle } from "../action/articles";
 import Navbar from "./Navbar";
 import api from "../utils/api";
 import { Link } from "react-router-dom";
@@ -13,9 +12,6 @@ function Articles(props) {
     api()
       .get(`/api/articles/${id}`)
       .then(res => {
-        console.log(res);
-
-        // const result = res.data.filter(article => id === res.data.id);
         console.log(res);
         setArticle(res.data[0]);
       })
@@ -46,21 +42,17 @@ function Articles(props) {
         </div>
       </div>
     </div>
-
-    //  {props.isTitleLoading ? (
-    //     <div className='spinner' />
-    // )}
   );
 }
 
 function mapStateToProps(state) {
   return {
-    // isTitleLoading: state.title.isLoading
+    
   };
 }
 
 const mapDispatchToProps = {
-  // addArticle
+  
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);

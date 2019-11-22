@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { connect } from "react-redux";
 import { registerUser } from "../action/register";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 const Register = ({ values, touched, errors }) => {
   return (
@@ -67,7 +67,8 @@ const FormikRegister = withFormik({
     console.log(formikBag);
     formikBag.props.registerUser(values);
     formikBag.resetForm({ username: "", password: "" });
+    formikBag.props.history.push('/login')
   }
 })(Register);
 
-export default connect(null, { registerUser })(FormikRegister);
+export default withRouter(connect(null, { registerUser })(FormikRegister));
