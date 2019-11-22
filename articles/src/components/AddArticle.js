@@ -12,7 +12,6 @@ function AddArticle(props) {
         link: "",
         image: "",
         user_id: 1,
-        // category_id: 1,
         category_name: ""
     })
 
@@ -33,7 +32,6 @@ function AddArticle(props) {
             link: "",
             image: "",
             user_id: 1,
-            // category_id: 1,
             category_name: ""
         })
         props.history.push('/')
@@ -43,10 +41,10 @@ function AddArticle(props) {
         <div> 
             <Navbar title="Add Article" />
             <div className="update-article">
-    <h1>Add Article</h1>
+        <h1>Add Article</h1>
             <form onSubmit={handleSubmit}>
                 <input
-                className="styled-input" 
+                    className="styled-input" 
                     type='text'
                     name='title'
                     placeholder='Title'
@@ -54,7 +52,7 @@ function AddArticle(props) {
                     onChange={handleChange}
                 />
                 <input
-                className="styled-input" 
+                    className="styled-input" 
                     type='text'
                     name='summary'
                     placeholder='Summary'
@@ -62,7 +60,7 @@ function AddArticle(props) {
                     onChange={handleChange}
                 />
                 <input
-                className="styled-input" 
+                    className="styled-input" 
                     type='text'
                     name='link'
                     placeholder='Link'
@@ -70,7 +68,7 @@ function AddArticle(props) {
                     onChange={handleChange}
                 />
                 <input
-                className="styled-input" 
+                    className="styled-input" 
                     type='text'
                     name='image'
                     placeholder='Image'
@@ -78,8 +76,7 @@ function AddArticle(props) {
                     onChange={handleChange}
                 />
                 <input
-                className="styled-input" 
-
+                    className="styled-input" 
                     type='text'
                     name='category_name'
                     placeholder='Category Name'
