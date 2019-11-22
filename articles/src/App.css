@@ -358,7 +358,7 @@
 
 /* Mobile  Articles JS*/
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
 
 
   .article-container {
@@ -375,9 +375,10 @@
   }
 
   .article-image {
-    max-width: 200px;
+    max-width: 300px;
     max-height: 300px;
     margin: 0 auto;
+    margin-top: 20px;
   }
 
   .book-button {
@@ -389,9 +390,23 @@
 
   }
 
+  .article-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .article-information {
     margin: 0 auto;
-    padding: 20px
+    padding: 40px
+  }
+
+  .article-buttons {
+    display: flex;
+    flex-direction: column
+  }
+
+  .article-buttons button {
+    margin-bottom: 10px;
   }
 
 }
