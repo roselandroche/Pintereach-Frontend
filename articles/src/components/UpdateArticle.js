@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { updateArticle } from "../action/update";
 import { connect } from "react-redux";
 import api from "../utils/api";
 import Navbar from "./Navbar";
 
-function UpdateArticle({ props, refresh, article }) {
+function UpdateArticle(props, {refresh, article }) {
   const [updateArticle, setUpdatedArticle] = useState({
     id: Date.now(),
     title: "",
@@ -15,6 +15,16 @@ function UpdateArticle({ props, refresh, article }) {
     category_name: "",
     category_id: 1
   });
+
+  useEffect(() => {
+    const id = props.match.params.id
+    api()
+      .get(`/api/articles/${id}`)
+      .then(res => {
+        setUpdatedArticle(res.data[0])
+      })
+      .catch(err => console.error(err.response));
+  }, []);
 
   const handleChange = event => {
     setUpdatedArticle({
@@ -99,11 +109,9 @@ function UpdateArticle({ props, refresh, article }) {
           <button className="primary-button" type="submit">
             Update
           </button>
-          <button
-          className="danger-button" 
-          type="danger">
-              Delete
-              </button>
+          <button className="danger-button" type="danger">
+            Delete
+          </button>
         </form>
       </div>
     </div>
