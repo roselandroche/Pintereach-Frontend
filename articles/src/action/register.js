@@ -4,7 +4,7 @@ export const FETCH_REGISTER_REQUEST = 'FETCH_REGISTER_REQUEST';
 export const FETCH_REGISTER_SUCCESS = 'FETCH_REGISTER_SUCCESS';
 export const FETCH_REGISTER_ERROR = 'FETCH_REGISTER_ERROR';
 
-export const registerUser = (user) => {
+export const registerUser = (user, props) => {
     return (
         dispatch => {
             dispatch({ type: FETCH_REGISTER_REQUEST })
@@ -17,7 +17,7 @@ export const registerUser = (user) => {
             })
 
             .catch(err => {
-                console.log(err.error)
+                console.log(err)
                 dispatch({ type: FETCH_REGISTER_ERROR })
             })
 
