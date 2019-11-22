@@ -47,19 +47,21 @@ function UpdateArticle(props, {refresh, article }) {
     });
   };
 
-  const deleteArticle = article => {
+  const deleteArticle = (id) => {
     if (window.confirm("Delete this article?")) {
       api()
-        .delete("/api/articles/:id")
-        .then(refresh())
+        .delete(`/api/articles/${id}`)
         .then(res => {
           console.log(res);
+          console.log(`Delete was successful`)
+          props.history.push('/')
         })
         .catch(err => {
           console.log(err);
         });
     }
   };
+
   return (
     <div>
       <Navbar title="Update Article" />
@@ -101,15 +103,19 @@ function UpdateArticle(props, {refresh, article }) {
           <input
             className="styled-input"
             type="text"
-            name="category"
-            placeholder="Category"
-            value={updateArticle.category}
+            name="category_name"
+            placeholder="Category Name"
+            value={updateArticle.category_name}
             onChange={handleChange}
           />
           <button className="primary-button" type="submit">
             Update
           </button>
-          <button className="danger-button" type="danger">
+          <button className="danger-button" type="danger" onClick={event => {
+              event.preventDefault();
+              event.stopPropagation();
+              deleteArticle(props.id)
+            }}>
             Delete
           </button>
         </form>
@@ -119,5 +125,7 @@ function UpdateArticle(props, {refresh, article }) {
 }
 
 const mapDispatchToProps = { updateArticle };
+
+
 
 export default connect(null, mapDispatchToProps)(UpdateArticle);
