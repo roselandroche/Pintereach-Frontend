@@ -355,3 +355,43 @@
 .error {
   color: red;
 }
+
+/* Mobile  Articles JS*/
+
+@media (max-width: 400px) {
+
+
+  .article-container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-div {
+    margin: 0 auto;
+  }
+
+  .article-image {
+    max-width: 200px;
+    max-height: 300px;
+    margin: 0 auto;
+  }
+
+  .book-button {
+    background: lightgray;
+    height: 40px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .article-information {
+    margin: 0 auto;
+    padding: 20px
+  }
+
+}
