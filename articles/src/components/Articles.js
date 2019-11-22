@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Navbar from "./Navbar";
 import api from "../utils/api";
+import { Link } from "react-router-dom";
 
 function Articles(props) {
   const [article, setArticle] = useState({});
@@ -26,12 +27,16 @@ function Articles(props) {
         </div>
         <div className="article-information">
           <h3 className="article-title">{article.title}</h3>
-          <button className="book-button">Book</button>
+          <div className="book-button">{article.category_name}</div>
           <p className="summary">{article.summary} </p>
 
           <div className="article-buttons">
-            <button className="primary-button">Read</button>
-            <button className="secondary-button">Edit</button>
+            <a className="primary-button" target="_blank" href={article.link}>
+              Read
+            </a>
+            <button className="secondary-button">
+              <Link to={`/updatearticle/${props.match.params.id}`}>Edit</Link>
+            </button>
             <div className="divider" />
           </div>
         </div>
