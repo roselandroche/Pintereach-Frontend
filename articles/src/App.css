@@ -363,23 +363,28 @@
 
 
   .article-container {
-    width: 100%;
+    width: 500px;
     margin: 0 auto;
-    border: 1px solid black;
     padding: 5%;
     display: flex;
     flex-direction: column;
+
   }
 
   .article-div {
     margin: 0 auto;
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden
   }
 
   .article-image {
-    max-width: 300px;
-    max-height: 300px;
-    margin: 0 auto;
-    margin-top: 20px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
   }
 
   .book-button {
@@ -388,6 +393,8 @@
     width: 100px;
     margin-left: auto;
     margin-right: auto;
+    padding: 5px;
+    border-radius: 3px;
 
   }
 
@@ -398,7 +405,12 @@
 
   .article-information {
     margin: 0 auto;
-    padding: 40px
+    padding: 40px;
+    text-align: center;
+  }
+
+  .summary {
+    text-align: center;
   }
 
   .article-buttons {
@@ -408,6 +420,17 @@
 
   .article-buttons button {
     margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .article-buttons a {
+    width: 99%;
+    margin-bottom: 5px;
+    padding-top: 17px;
+    text-decoration: none;
+    font-size: 16px;
+    height: 40px;
+    font-weight: bold;
   }
 
 }
