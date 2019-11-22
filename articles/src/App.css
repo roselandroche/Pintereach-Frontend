@@ -109,6 +109,9 @@
   border-radius: 5px;
   font-size: 14px;
   margin: 3px 0;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pinned-articles .card-image img {
@@ -374,28 +377,30 @@
   .article-div {
     margin: 0 auto;
     position: relative;
-    width: 250px;
-    height: 400px;
-    overflow: hidden
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
   }
 
   .article-image {
     position: absolute;
-    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    border-radius: 15px;
   }
 
   .book-button {
-    background: lightgray;
-    height: 40px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
+    background: #cdcdcd;
+    height: 20px;
+    margin: 0 auto;
+    padding: 10px;
     border-radius: 3px;
-
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
   }
 
   .article-title {
