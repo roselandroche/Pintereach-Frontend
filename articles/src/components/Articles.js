@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Articles(props) {
   const [article, setArticle] = useState({});
+  console.log(article)
   useEffect(() => {
     const id = props.match.params.id;
 

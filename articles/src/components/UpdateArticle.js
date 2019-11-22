@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import api from "../utils/api";
 import Navbar from "./Navbar";
 
-function UpdateArticle(props, {refresh, article }) {
+function UpdateArticle(props) {
   const [updateArticle, setUpdatedArticle] = useState({
     id: Date.now(),
     title: "",
@@ -47,13 +47,13 @@ function UpdateArticle(props, {refresh, article }) {
     });
   };
 
-  const deleteArticle = (id) => {
+  const deleteArticle = (article) => {
     if (window.confirm("Delete this article?")) {
       api()
-        .delete(`/api/articles/${id}`)
+        .delete(`/api/articles/${article.id}`)
         .then(res => {
-          console.log(res);
-          console.log(`Delete was successful`)
+          console.log(res.data.id);
+          console.log(props.id)
           props.history.push('/')
         })
         .catch(err => {
@@ -112,10 +112,10 @@ function UpdateArticle(props, {refresh, article }) {
             Update
           </button>
           <button className="danger-button" type="danger" onClick={event => {
-              event.preventDefault();
-              event.stopPropagation();
-              deleteArticle(props.id)
-            }}>
+            event.preventDefault();
+            event.stopPropagation();
+            deleteArticle(updateArticle.id)
+          }}>
             Delete
           </button>
         </form>
