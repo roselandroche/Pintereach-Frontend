@@ -8,7 +8,6 @@ export default function Navbar() {
       <div className="nav-button-container">
       <Link className="add-button" to="/addarticle">Add</Link>
       <Link className="logout-button" to="/logout">Logout</Link>
-
       </div>
     </div>
   );
