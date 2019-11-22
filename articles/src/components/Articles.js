@@ -21,16 +21,17 @@ function Articles(props) {
     <div>
       <Navbar title="Article" />
       <div className="article-container">
-        <div className="article-image">
-          <img src={article.image} alt="" />
+        <div className="article-div">
+          <img className="article-image" src={article.image} alt="" />
         </div>
         <div className="article-information">
-          <h3>{article.title}</h3>
+          <h3 className="article-title">{article.title}</h3>
           <button className="book-button">Book</button>
           <p className="summary">{article.summary} </p>
 
           <div className="article-buttons">
-            <button className="article-button">Read</button>
+            <button className="primary-button">Read</button>
+            <button className="secondary-button">Edit</button>
             <div className="divider" />
           </div>
         </div>

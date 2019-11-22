@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
-*{
-  font-family:  'Montserrat', sans-serif;
+* {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App {
@@ -59,6 +59,7 @@
   padding: 5px;
   display: inline-block;
 }
+
 .navbar .nav-button-container .logout-button {
   background: red;
   color: white;
@@ -70,6 +71,7 @@
   height: 25px;
   width: 60px;
 }
+
 .navbar .logout-button img {
   filter: invert();
 }
@@ -106,6 +108,7 @@
   padding: 2px 5px;
   border-radius: 5px;
   font-size: 14px;
+  margin: 3px 0;
 }
 
 .pinned-articles .card-image img {
@@ -162,6 +165,7 @@
   text-align: right;
   margin-top: 10px;
 }
+
 .register .register-login .button {
   display: inline-block;
   height: 20px;
@@ -174,9 +178,10 @@
   padding: 2px;
 }
 
-.login .register-link{
+.login .register-link {
   text-decoration: none;
 }
+
 .styled-input {
   width: 80%;
   height: 50px;
@@ -198,6 +203,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .primary-button:hover {
   transform: scale(1.03);
 }
@@ -222,8 +228,14 @@
   align-items: flex-start;
 }
 
-.article-image {
+.artice-div {
   margin-top: 34px;
+}
+
+.article-image {
+
+  max-width: 400px;
+  max-height: 600px
 }
 
 .book-button {
@@ -308,6 +320,7 @@
   font-size: 16px;
   font-weight: bold;
 }
+
 .login h1 {
   color: #363636;
 }
@@ -318,6 +331,7 @@
   max-width: 500px;
   margin: 20px auto;
 }
+
 .update-article h1 {
   font-size: 24px;
   color: #363636;
@@ -341,4 +355,59 @@
 
 .error {
   color: red;
+}
+
+/* Mobile  Articles JS*/
+
+@media (max-width: 800px) {
+
+
+  .article-container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-div {
+    margin: 0 auto;
+  }
+
+  .article-image {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .book-button {
+    background: lightgray;
+    height: 40px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .article-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article-information {
+    margin: 0 auto;
+    padding: 40px
+  }
+
+  .article-buttons {
+    display: flex;
+    flex-direction: column
+  }
+
+  .article-buttons button {
+    margin-bottom: 10px;
+  }
+
 }
