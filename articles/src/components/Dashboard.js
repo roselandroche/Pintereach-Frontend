@@ -26,8 +26,6 @@ function Dashboard() {
 
   return (
     <div>
-      {/* ADD GET REQUEST TO DISPLAY ARTICLES HERE */}
-{/* :D */}
       <Navbar />
       <ArticleGroup
         search={search}
