@@ -6,12 +6,10 @@ import Navbar from "./Navbar";
 
 function UpdateArticle(props, {refresh, article }) {
   const [updateArticle, setUpdatedArticle] = useState({
-    id: Date.now(),
     title: "",
     summary: "",
     link: "",
     image: "",
-    user_id: 1,
     category_name: "",
     category_id: 1
   });
@@ -37,12 +35,10 @@ function UpdateArticle(props, {refresh, article }) {
     event.preventDefault();
     props.updateArticle(updateArticle);
     setUpdatedArticle({
-      id: Date.now(),
       title: "",
       summary: "",
       link: "",
       image: "",
-      user_id: 1,
       category_name: ""
     });
   };
