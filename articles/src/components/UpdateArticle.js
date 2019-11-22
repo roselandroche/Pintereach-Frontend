@@ -43,7 +43,7 @@ function UpdateArticle(props, {refresh, article }) {
       link: "",
       image: "",
       user_id: 1,
-      category: ""
+      category_name: ""
     });
   };
 
