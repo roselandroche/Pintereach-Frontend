@@ -27,7 +27,8 @@ function Login(props) {
         props.history.push("/");
       })
       .catch(err => {
-        setError(err.res);
+        console.log(err.response)
+        setError(err);
       });
   };
 
