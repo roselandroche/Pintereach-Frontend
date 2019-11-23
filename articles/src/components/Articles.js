@@ -35,7 +35,7 @@ function Articles(props) {
             <a className="primary-button" target="_blank" href={article.link}>
               Read
             </a>
-            <div class="divider" />
+            <div className="divider" />
             <button className="secondary-button">
               <Link to={`/updatearticle/${props.match.params.id}`}>Edit</Link>
             </button>
