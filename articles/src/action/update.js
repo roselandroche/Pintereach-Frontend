@@ -10,13 +10,13 @@ export const updateArticle = (foobar) => {
             dispatch({ type: FETCH_UPDATE_START })
 
         api()
-            .put(`api/articles/:id`, foobar)
+            .put(`api/articles/${foobar.id}`, foobar)
             .then(res => {
                 console.log(res.data)
                 dispatch({ type: FETCH_UPDATE_SUCCESS })
             })
             .catch(err => {
-                console.log(err)
+                console.log(err.response)
                 dispatch({ type: FETCH_UPDATE_FAILURE })
             })
         }

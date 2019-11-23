@@ -11,7 +11,6 @@ function UpdateArticle(props) {
     link: "",
     image: "",
     category_name: ""
-
   });
 
   useEffect(() => {
@@ -45,9 +44,10 @@ function UpdateArticle(props) {
   };
 
   const deleteArticle = (article) => {
+    console.log(article)
     if (window.confirm("Delete this article?")) {
       api()
-        .delete(`/api/articles/${article.id}`)
+        .delete(`/api/articles/${article}`)
         .then(res => {
           console.log(res.data.id);
           props.history.push('/')
