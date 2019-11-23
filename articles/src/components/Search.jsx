@@ -34,7 +34,7 @@ export default function SearchForm({ search, articles }) {
           type="text"
           name="search"
           id="search"
-          placeholder="Search"
+          placeholder="Press enter to search"
           className="styled-input"
         />
       </form>
