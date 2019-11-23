@@ -40,6 +40,7 @@ function UpdateArticle(props) {
       image: "",
       category_name: ""
     });
+    props.history.push('/')
   };
 
   const deleteArticle = (article) => {
