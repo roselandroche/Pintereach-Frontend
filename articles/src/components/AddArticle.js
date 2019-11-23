@@ -6,12 +6,10 @@ import Navbar from './Navbar';
 
 function AddArticle(props) {
     const [newArticle, setNewArticle] = useState({
-        id: Date.now(),
         title: "",
         summary: "",
         link: "",
         image: "",
-        // user_id: 1,
         category_name: ""
     })
 
@@ -26,12 +24,10 @@ function AddArticle(props) {
         event.preventDefault()
         props.postArticle(newArticle)
         setNewArticle({
-            id: Date.now(),
             title: "",
             summary: "",
             link: "",
             image: "",
-            // user_id: 1,
             category_name: ""
         })
         props.history.push('/')

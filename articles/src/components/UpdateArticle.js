@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 
 function UpdateArticle(props) {
   const [updateArticle, setUpdatedArticle] = useState({
-
     title: "",
     summary: "",
     link: "",
