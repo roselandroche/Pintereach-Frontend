@@ -11,9 +11,13 @@ function UpdateArticle(props) {
     summary: "",
     link: "",
     image: "",
+<<<<<<< HEAD
     // user_id: 1,
     category_name: "",
     category_id: 1
+=======
+    category_name: ""
+>>>>>>> e1907eb6ee3623b93cb7d6fac8a6e92ea2363344
   });
 
   useEffect(() => {
@@ -48,9 +52,10 @@ function UpdateArticle(props) {
   };
 
   const deleteArticle = (article) => {
+    console.log(article)
     if (window.confirm("Delete this article?")) {
       api()
-        .delete(`/api/articles/${article.id}`)
+        .delete(`/api/articles/${article}`)
         .then(res => {
           console.log(res.data.id);
           props.history.push('/')
@@ -124,7 +129,5 @@ function UpdateArticle(props) {
 }
 
 const mapDispatchToProps = { updateArticle };
-
-
 
 export default connect(null, mapDispatchToProps)(UpdateArticle);

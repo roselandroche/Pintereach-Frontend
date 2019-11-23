@@ -19,4 +19,19 @@ export const updateArticle = () => dispatch => {
             dispatch({ type: FETCH_UPDATE_FAILURE, payload: err.response })
         })
 
+<<<<<<< HEAD
+=======
+        api()
+            .put(`api/articles/${foobar.id}`, foobar)
+            .then(res => {
+                console.log(res.data)
+                dispatch({ type: FETCH_UPDATE_SUCCESS })
+            })
+            .catch(err => {
+                console.log(err.response)
+                dispatch({ type: FETCH_UPDATE_FAILURE })
+            })
+        }
+    )
+>>>>>>> e1907eb6ee3623b93cb7d6fac8a6e92ea2363344
 }
