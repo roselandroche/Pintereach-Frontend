@@ -10,8 +10,7 @@ function UpdateArticle(props, {refresh, article }) {
     summary: "",
     link: "",
     image: "",
-    category_name: "",
-    category_id: 1
+    category_name: ""
   });
 
   useEffect(() => {
@@ -41,6 +40,7 @@ function UpdateArticle(props, {refresh, article }) {
       image: "",
       category_name: ""
     });
+    props.history.push('/')
   };
 
   const deleteArticle = (id) => {
