@@ -11,7 +11,7 @@ function AddArticle(props) {
         summary: "",
         link: "",
         image: "",
-        user_id: 1,
+        // user_id: 1,
         category_name: ""
     })
 

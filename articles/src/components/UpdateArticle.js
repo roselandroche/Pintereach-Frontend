@@ -11,7 +11,7 @@ function UpdateArticle(props) {
     summary: "",
     link: "",
     image: "",
-    user_id: 1,
+    // user_id: 1,
     category_name: "",
     category_id: 1
   });
@@ -42,7 +42,7 @@ function UpdateArticle(props) {
       summary: "",
       link: "",
       image: "",
-      user_id: 1,
+      // user_id: 1,
       category_name: ""
     });
   };
@@ -53,7 +53,6 @@ function UpdateArticle(props) {
         .delete(`/api/articles/${article.id}`)
         .then(res => {
           console.log(res.data.id);
-          console.log(props.id)
           props.history.push('/')
         })
         .catch(err => {
