@@ -7,7 +7,8 @@ import {
 const initialState = {
     isLoading: false,
     error: null,
-    posted: false
+    posted: false,
+    
 }
 
 export function reducer(state = initialState, action) {
@@ -21,7 +22,7 @@ export function reducer(state = initialState, action) {
             return {
                 ...state,
                 posted: true,
-                isLoading: false
+                isLoading: false,
             }
         case FETCH_UPDATE_FAILURE: 
             return {
