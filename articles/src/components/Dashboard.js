@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ArticleGroup from "./ArticleGroup";
 import Navbar from "./DashboardNav";
 import api from "../utils/api";
-import data from "./dummyData";
+// import data from "./dummyData";
 
 function Dashboard() {
   const [articles, setArticles] = useState([]);
