@@ -17,7 +17,7 @@ export const registerUser = (user, props) => {
             })
 
             .catch(err => {
-                console.log(err)
+                console.log(err.response)
                 dispatch({ type: FETCH_REGISTER_ERROR })
             })
 
