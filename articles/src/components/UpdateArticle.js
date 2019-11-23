@@ -122,6 +122,4 @@ function UpdateArticle(props, {refresh, article }) {
 
 const mapDispatchToProps = { updateArticle };
 
-
-
 export default connect(null, mapDispatchToProps)(UpdateArticle);
