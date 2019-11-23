@@ -6,13 +6,12 @@ import Navbar from "./Navbar";
 
 function UpdateArticle(props) {
   const [updateArticle, setUpdatedArticle] = useState({
-    id: Date.now(),
+
     title: "",
     summary: "",
     link: "",
     image: "",
-    category_name: ""
-
+    category_name: "",  
   });
 
   useEffect(() => {
@@ -36,12 +35,10 @@ function UpdateArticle(props) {
     event.preventDefault();
     props.updateArticle(updateArticle);
     setUpdatedArticle({
-      id: Date.now(),
       title: "",
       summary: "",
       link: "",
       image: "",
-      // user_id: 1,
       category_name: ""
     });
   };
