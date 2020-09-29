@@ -1,13 +1,13 @@
 # Description
 
 - What problem does your app solve?
-    Enables users to save articles in a safe place so you're able to read them and prioritize what you want to read/when they want to.
+	- Enables users to save articles in a safe place so you're able to read them and prioritize what you want to read/when they want to.
 
 - How does your app solve the problem?
-    Keeps articles of interest organized to anyone who reads online. 
+	- Keeps articles of interest organized to anyone who reads online. 
 
 - What is the mission statement?
-    Reading should be accessible and convenient for everyone.
+	- Reading should be accessible and convenient for everyone.
 
 
 # Features
@@ -31,19 +31,19 @@ What features may you wish to put in a future release?
 # Design - Planning
 
 - What design system will you use?
-    Wireframe and a template for the UI team using HTML and CSS.
-    CSS, SASS, bootstrap, reactstrap for React.
+	- Wireframe and a template for the UI team using HTML and CSS.
+	- CSS, SASS, bootstrap, reactstrap for React.
 
 - What will your user flow be? 
-    Enter the site and see pics/tiles of articles that are saved. 
-    Login, save an article (update and edit) and delete functionality for articles selected.
+	- Enter the site and see pics/tiles of articles that are saved. 
+	- Login, save an article (update and edit) and delete functionality for articles selected.
 
 # Target Audience
 
 - Who is your target audience? Be specific.
-    Anyone who has an interest on reading an article online/offline and wants to save it for later. People who read who want to read. 
+	- Anyone who has an interest on reading an article online/offline and wants to save it for later. People who read who want to read. 
 
-########################################################################################
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Pintereach Backend
 	- Hi! This is the back-end documentation for the Pintereach project. This is the link to our TDD FORM of what our application accomplishes.
@@ -56,46 +56,46 @@ What features may you wish to put in a future release?
 
 ## Endpoints
 - Registration
-POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
+	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
 
-Should Get Status 201
-{
-	"username":"taslim",
-	"password":"taslim"
-}
+	- Should Get Status 201
+	- {
+	- 	"username":"taslim",
+	- 	"password":"taslim"
+	- }
 - Login
-POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/login
+	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/login
 
-Should Get Status 200
-{
-    "message": "Welcome taslim!",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoyLCJ1c2VybmFtZSI6InJveCIsImlhdCI6MTU2MTM5ODcxNCwiZXhwIjoxNTYyMzQ5MTE0fQ.TUGs2t-sRBkoJBI6Qly5qUMsAGvV5tNHESJ4I2hPDt8"
-}
+	- Should Get Status 200
+	- {
+	-     "message": "Welcome taslim!",
+	-     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoyLCJ1c2VybmFtZSI6InJveCIsImlhdCI6MTU2MTM5ODcxNCwiZXhwIjoxNTYyMzQ5MTE0fQ.TUGs2t-sRBkoJBI6Qly5qUMsAGvV5tNHESJ4I2hPDt8"
+	- }
 - Get a list of articles
-GET / https://lambda-bw-pintereach.herokuapp.com/api/articles/
+	- GET / https://lambda-bw-pintereach.herokuapp.com/api/articles/
 
-Should Get Status 200
-{
-            "id": 1,
-            "title": "Pokemon electronic game",
-            "summary": "Pokémon, electronic game series from Nintendo that debuted in Japan in 1995 and later became wildly popular in the United States. The series, originally produced for the company’s Game Boy line of handheld consoles, was introduced in 1998 to the United States with two titles, known to fans as Red and Blue.",
-            "link": "https://www.britannica.com/topic/Pokemon-electronic-game",
-            "image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
-            "user_id": 1,
-	    "category_id": 1, 
-            "category_name": "Game"
-        },
-        {
-            "id": 2,
-            "title": "Dota 2",
-            "summary": "Dota 2 is a multiplayer online battle arena video game developed and published by Valve Corporation. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III: Reign of Chaos and its expansion pack, The Frozen Throne",
-            "link": "https://en.wikipedia.org/wiki/Dota_2",
-            "image": "https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/02/24144435/0_vbw4wQW_Xq2_3eOo.jpg",
-            "user_id": 2,
-            "category_id": 1, 
-            "category_name": "Game"
-        },
-    "message": "You have gotten articles back"
+	- Should Get Status 200
+	- {
+	-       "id": 1,
+	- 	"title": "Pokemon electronic game",
+	- 	"summary": "Pokémon, electronic game series from Nintendo that debuted in Japan in 1995 and later became wildly popular in the United States. The series, originally produced for the company’s Game Boy line of handheld consoles, was introduced in 1998 to the United States with two titles, known to fans as Red and Blue.",
+	- 	"link": "https://www.britannica.com/topic/Pokemon-electronic-game",
+	- 	"image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
+	- 	"user_id": 1,
+	- 	"category_id": 1, 
+	- 	"category_name": "Game"
+	- },
+	- {
+	- 	"id": 2,
+	- 	"title": "Dota 2",
+	- 	"summary": "Dota 2 is a multiplayer online battle arena video game developed and published by Valve Corporation. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III: Reign of Chaos and its expansion pack, The Frozen Throne",
+	- 	"link": "https://en.wikipedia.org/wiki/Dota_2",
+	- 	"image": "https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/02/24144435/0_vbw4wQW_Xq2_3eOo.jpg",
+	- 	"user_id": 2,
+	- 	"category_id": 1, 
+	- 	"category_name": "Game"
+	- 	"message": "You have gotten articles back"
+	- },
 - Add an article
 POST / https://lambda-bw-pintereach.herokuapp.com/api/articles/
 
