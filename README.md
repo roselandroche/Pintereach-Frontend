@@ -46,10 +46,7 @@ What features may you wish to put in a future release?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Pintereach Backend
-	- Hi! This is the back-end documentation for the Pintereach project. This is the link to our TDD FORM of what our application accomplishes.
-
-### Database Design
-	- Image link to the design
+	- Hi! This is the back-end documentation for the Pintereach project.
 
 ### Authentication
 	- The API supplies a token upon logging in and is required to perform any CRUD actions.
@@ -85,6 +82,7 @@ What features may you wish to put in a future release?
 		- 	"category_id": 1, 
 		- 	"category_name": "Game"
 		- },
+		
 		- {
 		- 	"id": 2,
 		- 	"title": "Dota 2",
@@ -120,7 +118,7 @@ What features may you wish to put in a future release?
 - Update an article
 	- PUT / https://lambda-bw-pintereach.herokuapp.com/api/articles/:id
 
-- Path Variables id
+	- Path Variables id
 		- {
 		-       "id": 1,
 		-       "title": "Updated A test Title",
