@@ -59,10 +59,10 @@ What features may you wish to put in a future release?
 	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
 
 	- Should Get Status 201
-	- {
-	- 	"username":"taslim",
-	- 	"password":"taslim"
-	- }
+		- {
+		- 	"username":"taslim",
+		- 	"password":"taslim"
+		- }
 - Login
 	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/login
 
@@ -102,32 +102,32 @@ What features may you wish to put in a future release?
 	- Should Get Status 401 if a user does not have a token they are not allowed to post.
 	- Should Get Status 200 if added successfully.
 
-		 {
-		    "id": 1,
-			"title": "A test Title",
-			"summary": "This is a little summary about the article..",
-			"link": "https://www.britannica.com/topic/Pokemon-electronic-game",
-			"image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
-			"user_id": 1,
-			"category_id": 1,
-			"category_name": "Test Article"
-		}
+		- {
+		-       "id": 1,
+		-       "title": "A test Title",
+		-       "summary": "This is a little summary about the article..",
+		-       "link": "https://www.britannica.com/topic/Pokemon-electronic-game",
+		-       "image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
+		-       "user_id": 1,
+		-       "category_id": 1,
+		-       "category_name": "Test Article"
+		- }
 
 - Delete an article
-Path Variables id
-DELETE / https://lambda-bw-pintereach.herokuapp.com/api/articles/:id
+	- Path Variables id
+	- DELETE / https://lambda-bw-pintereach.herokuapp.com/api/articles/:id
 
 - Update an article
-PUT / https://lambda-bw-pintereach.herokuapp.com/api/articles/:id
+	- PUT / https://lambda-bw-pintereach.herokuapp.com/api/articles/:id
 
-Path Variables id
- {
-    "id": 1,
-	"title": "Updated A test Title",
-	"summary": "Updated This is a little summary about the article..",
-	"link": "https://www.britannica.com/topic/Pokemon-electronic-game",
-	"image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
-	"user_id": 1,
-	"category_id: 1,
-	"category_name": "Updated Test Article"
-}
+- Path Variables id
+		- {
+		-       "id": 1,
+		-       "title": "Updated A test Title",
+		-       "summary": "Updated This is a little summary about the article..",
+		-       "link": "https://www.britannica.com/topic/Pokemon-electronic-game",
+		-       "image": "https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg",
+		-       "user_id": 1,
+		-       "category_id: 1,
+		-       "category_name": "Updated Test Article"
+		- }
