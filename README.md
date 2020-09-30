@@ -12,29 +12,29 @@
 
 # Features
 
-What features are required for your minimum viable product?
+What features were required for the minimum viable product?
 
 - User registration/login flow
 - User can save articles to read later
-- Use can assign articles to a category
+- User can assign articles to a category
 - User can view saved articles in cards
 - User can delete saved articles
 
 
-What features may you wish to put in a future release?
+What features might be in a future release?
 
 - User can click the link to the study to read it.
 - User can rank the articles that are the most important to read first
-- Saving a link generates a preview of the website just like slack does.
+- Saving a link generates a preview of the website.
 - Download the article for a specific device. 
 
 # Design - Planning
 
-What design system will you use?
+What design system will be used?
 - Wireframe and a template for the UI team using HTML and CSS.
 - CSS, SASS, bootstrap, reactstrap for React.
 
-What will your user flow be? 
+What will the user flow be? 
 - Enter the site and see pics/tiles of articles that are saved. 
 - Login, save an article (update and edit) and delete functionality for articles selected.
 
@@ -56,10 +56,12 @@ Registration
 - POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
 
 - Should Get Status 201
-	- "{
+	```
+	{
 		"username":"taslim",
 		"password":"taslim"
-	}"
+	}
+	```
 - Login
 	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/login
 
