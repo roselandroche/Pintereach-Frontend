@@ -1,10 +1,10 @@
 # Description
 
-- What problem does your app solve?
-	- Enables users to save articles in a safe place so you're able to read them and prioritize what you want to read/when they want to.
+- What problem does this app solve?
+	- Enables users to save articles in a safe place so they're able to read them and prioritize what they want to read.
 
-- How does your app solve the problem?
-	- Keeps articles of interest organized to anyone who reads online. 
+- How does this app solve the problem?
+	- Keeps articles of interest organized and accessible from one location. 
 
 - What is the mission statement?
 	- Reading should be accessible and convenient for everyone.
@@ -14,52 +14,52 @@
 
 What features are required for your minimum viable product?
 
-	- User registration/login flow
-	- User can save articles to read later
-	- Use can assign articles to a category
-	- User can view saved articles in cards
-	- User can delete saved articles
+- User registration/login flow
+- User can save articles to read later
+- Use can assign articles to a category
+- User can view saved articles in cards
+- User can delete saved articles
 
 
 What features may you wish to put in a future release?
 
-	- User can click the link to the study to read it.
-	- User can rank the articles that are the most important to read first
-	- Saving a link generates a preview of the website just like slack does.
-	- Download the article for a specific device. 
+- User can click the link to the study to read it.
+- User can rank the articles that are the most important to read first
+- Saving a link generates a preview of the website just like slack does.
+- Download the article for a specific device. 
 
 # Design - Planning
 
-- What design system will you use?
-	- Wireframe and a template for the UI team using HTML and CSS.
-	- CSS, SASS, bootstrap, reactstrap for React.
+What design system will you use?
+- Wireframe and a template for the UI team using HTML and CSS.
+- CSS, SASS, bootstrap, reactstrap for React.
 
-- What will your user flow be? 
-	- Enter the site and see pics/tiles of articles that are saved. 
-	- Login, save an article (update and edit) and delete functionality for articles selected.
+What will your user flow be? 
+- Enter the site and see pics/tiles of articles that are saved. 
+- Login, save an article (update and edit) and delete functionality for articles selected.
 
 # Target Audience
 
-- Who is your target audience? Be specific.
-	- Anyone who has an interest on reading an article online/offline and wants to save it for later. People who read who want to read. 
+Who is the target audience?
+- People who have an interest in reading articles digitally and would like to organize their reading material.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Pintereach Backend
-	- Hi! This is the back-end documentation for the Pintereach project.
+- This is the back-end documentation for the Pintereach project.
 
 ### Authentication
-	- The API supplies a token upon logging in and is required to perform any CRUD actions.
+- The API supplies a token upon logging in and is required to perform any CRUD actions.
 
 ## Endpoints
-- Registration
-	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
+Registration
+- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/register
 
-	- Should Get Status 201
-		- {
-		- 	"username":"taslim",
-		- 	"password":"taslim"
-		- }
+- Should Get Status 201
+	- "{
+		"username":"taslim",
+		"password":"taslim"
+	}"
 - Login
 	- POST / https://lambda-bw-pintereach.herokuapp.com/api/auth/login
 
